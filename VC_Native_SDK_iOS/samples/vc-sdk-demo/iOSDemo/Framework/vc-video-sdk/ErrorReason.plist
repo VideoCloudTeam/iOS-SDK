@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Timer expired awaiting token refresh</key>
+	<string>网络中断，通话已断开</string>
+	<key>Remote disconnect</key>
+	<string>远端主动断开连接</string>
+	<key>User initiated disconnect</key>
+	<string>主持人中断了会议</string>
+	<key>Call disconnected</key>
+	<string>平台断开连接</string>
+	<key>Browser closed</key>
+	<string>远端浏览器关闭，退出会议</string>
+	<key>Disconnected by another participant</key>
+	<string>被主持人踢出</string>
+	<key>API initiated conference termination</key>
+	<string>会控中断了会议</string>
+	<key>Missing answer SDP</key>
+	<string>无应答SDP，握手失败，入会失败</string>
+	<key>Participant exceeded PIN entry retries</key>
+	<string>输入错误密码的次数超过3次</string>
+	<key>Dialog has failed</key>
+	<string>SIP会话已失效（网络原因导致会话心跳超时）</string>
+	<key>PIN entry timed out</key>
+	<string>等待入会密码输入超时</string>
+	<key>Undefined reason</key>
+	<string>未知原因(H323远端主动断开连接) </string>
+	<key>No audio capability,No IVR</key>
+	<string>远端呼叫中无音频，无法播放语音提示</string>
+	<key>Last host left the conference, you have to leave</key>
+	<string>主持人已离开会议室，会议结束</string>
+	<key>Session renegotiation failed</key>
+	<string>SIP 会话重协商失败，平台断开连接</string>
+	<key>Node restarted</key>
+	<string>MCU节点重启，平台断开连接</string>
+	<key>Participant has disconnected</key>
+	<string>远端断开连接（RTMP直播，小程序）</string>
+	<key>No participants can keep conference alive</key>
+	<string>所有主持人已离开会议，断开连接</string>
+	<key>Call rejected</key>
+	<string>握手失败，呼叫被拒绝</string>
+	<key>Signalling node disconnected</key>
+	<string>信令节点异常，平台断开连接</string>
+	<key>Timeout expired waiting for ACK</key>
+	<string>等待ACK超时（SIP或WebRTC），平台断开连接</string>
+	<key>Unresolvable destination (478/SL)</key>
+	<string>SIP目标地址无法被解析，断开连接</string>
+	<key>Request Timeout</key>
+	<string>请求超时（408），平台断开连接</string>
+	<key>Decline</key>
+	<string>远端拒绝（603），平台断开连接</string>
+	<key>Participant did not connect in time</key>
+	<string>参会者没有及时入会，平台断开连接</string>
+	<key>Connection was closed cleanly.</key>
+	<string>连接正常关闭</string>
+	<key>Media node disconnected</key>
+	<string>媒体节点异常，平台断开连接</string>
+	<key>Last participant is forced to leave</key>
+	<string>唯一的参会者被强制退会</string>
+	<key>Re-INVITE timer has expired</key>
+	<string>SIP 重邀请失败，平台断开连接</string>
+	<key>Proxy Authentication Required</key>
+	<string>SIP请求认证超时退出</string>
+	<key>Temporarily Unavailable</key>
+	<string>服务暂不可用（480），退出</string>
+	<key>Not Found</key>
+	<string>服务不存在，退出</string>
+	<key>Conference host did not join</key>
+	<string>主持人未入会，退出</string>
+	<key>Server Internal Error</key>
+	<string>服务器内部错误（500)</string>
+	<key>Timeout waiting for conference host to join or permit access to locked conference</key>
+	<string>会议室被锁定或主持人未入会</string>
+	<key>Invalid license</key>
+	<string>license非法</string>
+	<key>Insufficient capacity</key>
+	<string>并发数超过虚拟MCU上限</string>
+	<key>No conference number entered</key>
+	<string>等待会议室号码输入超时</string>
+	<key>呼叫失败: Invalid token</key>
+	<string>无效的token(webRTC/RTMP端）</string>
+	<key>呼叫失败: Internal server error</key>
+	<string>服务器内部错误（500)</string>
+	<key>Remote cancel</key>
+	<string>远端取消了呼叫</string>
+	<key>Media process disconnected</key>
+	<string>媒体进程异常退出，平台断开连接</string>
+	<key>Busy here</key>
+	<string>SIP端忙（486），呼叫被拒绝</string>
+	<key>SDP parser failure during answer processing</key>
+	<string>SDP（offer)格式有误，握手失败</string>
+	<key>Error sending request: refresh_session</key>
+	<string>与平台无法建立https连接，token刷新失败</string>
+	<key>unsupported call_type u&apos;recvonly&apos;</key>
+	<string>非法的呼叫类型</string>
+	<key>呼叫失败: SDP parser failure during offer processing</key>
+	<string>SDP（offer)格式有误，握手失败</string>
+	<key>呼叫失败: Answer tried to set recv when offer did not set send</key>
+	<string></string>
+	<key>Invalid rtmp dialout url</key>
+	<string>输入的RTMP（直播）URL格式不正确</string>
+	<key>Service terminated by host participant</key>
+	<string>主持人中断了会议</string>
+	<key>Call answered elsewhere</key>
+	<string>已由其他参会者接听，平台断开连接</string>
+	<key>unsupported protocol u&apos;mssip&apos;</key>
+	<string>不支持这个类型的呼叫</string>
+	<key>No any service found</key>
+	<string>服务不存在，退出</string>
+	<key>呼叫失败: Failed to set remote answer sdp: Called with SDP without ice-ufrag and ice-pwd.</key>
+	<string>SDP（answer)格式有误(无ice-ufrag和ice-pwd)，握手失败</string>
+	<key>disconnected due to dup check!</key>
+	<string>重复入会，被踢出</string>
+	<key>Participant limit reached</key>
+	<string>超过允许的参会人数上限，平台断开连接</string>
+	<key>disconnect by peer</key>
+	<string>H323远端主动断开连接</string>
+	<key>experience time is expired!</key>
+	<string>体验时间已经过期!</string>
+</dict>
+</plist>

@@ -1,0 +1,26 @@
+//
+//  PrefixHeader.pch
+//  iOSDemo
+//
+//  Created by mac on 2019/7/8.
+//  Copyright © 2019 mac. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import <VCRTC/VCRTC.h>
+#import <WebRTC/WebRTC.h>
+#import "TZImagePickerController.h"
+#define SCREEN_WIDTH  [UIScreen mainScreen].bounds.size.width
+#define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+#define IS_PhoneXAll (IS_IPHONE_X || IS_IPHONE_Xr || IS_IPHONE_Xs_Max)
+
+#define kGroupId @"填写屏幕录制groupId"
+#define kScreenRecordState @"screen_record_open_state"//屏幕录制状态 start 开始录制 stop 停止录制 applaunch app刚进入 ongoging 录制屏幕进行中
+#define kScreenRecordMeetingState @"screen_record_meeting_state"//会议状态 outmeeting没入会 inmeeting 会中
+
+#endif /* PrefixHeader_pch */
