@@ -1,0 +1,147 @@
+//
+// Prefix header for all source files of the 'linphone' target in the 'linphone' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+    #import <UIKit/UIKit.h>
+#import "UIView+Frame.h"
+#import "UIButton+Extension.h"
+#import "NSObject+RDRCommon.h"
+#import "UIImage+ForceDecode.h"
+#import "UIControl+recurClick.h"
+#import "YYModel.h"
+#import "NetworkrRequstAPI.h"
+#import "ViaNetworkRequestV3API.h"
+#import "BTMToast.h"
+#import "Encryption.h"
+#import "VCPublicModel.h"
+
+//#import "Masonry.h"
+
+/*    PCH 文件使用在 "紫荆云"      */
+
+#define RGB(R, G, B)  [UIColor colorWithRed:R/255.0 green:G/255.0 blue:B/255.0 alpha:1.0]
+//判断是否是ipad
+#define isPad ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
+//判断iPhone4系列
+#define kiPhone4 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 960), [[UIScreen mainScreen] currentMode].size) && !isPad : NO)
+//判断iPhone5系列
+#define kiPhone5 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) && !isPad : NO)
+//判断iPhone6 6s 7系列
+#define kiPhone6 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(750, 1334), [[UIScreen mainScreen] currentMode].size) && !isPad : NO)
+//判断iPhone6p 6sp 7p系列
+#define kiPhone6Plus ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1242, 2208), [[UIScreen mainScreen] currentMode].size) && !isPad : NO)
+//判断iPhoneX，Xs（iPhoneX，iPhoneXs）
+#define IS_IPHONE_X ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) && !isPad : NO)
+//判断iPhoneXr
+#define IS_IPHONE_Xr ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(828, 1792), [[UIScreen mainScreen] currentMode].size) && !isPad : NO)
+//判断iPhoneXsMax
+#define IS_IPHONE_Xs_Max ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1242, 2688), [[UIScreen mainScreen] currentMode].size)&& !isPad : NO)
+//判断iPhoneX所有系列
+#define IS_PhoneXAll (IS_IPHONE_X || IS_IPHONE_Xr || IS_IPHONE_Xs_Max)
+#define k_Height_NavContentBar 44.0f
+#define k_Height_StatusBar (IS_PhoneXAll? 44.0 : 20.0)
+#define k_Height_NavBar (IS_PhoneXAll ? 88.0 : 64.0)
+#define k_Height_TabBar (IS_PhoneXAll ? 83.0 : 49.0)
+#define IPAD [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad
+#define SafeAreaTopHeight (IS_PhoneXAll ? 88.0 : 64.0)
+#define SafeAreaBottomHeight (IS_PhoneXAll ? 20 : 0)
+
+#define SCREEN_WIDTH  [UIScreen mainScreen].bounds.size.width
+#define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+#define IPHONE6W      [UIScreen mainScreen].bounds.size.width/375
+#define IPHONE6H      [UIScreen mainScreen].bounds.size.height/667
+#define safeString(s) ([s isKindOfClass:[NSString class]] ? ([s length]>0 ? s : @"") : (@""))
+
+// 取当前应用的版本号，该版本号可以用来做基础网络参数给服务器，如:5.1.0， 同时该版本号也用于取补丁的版本号
+#define cVersion ([[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"])
+#define SYSTEM_VERSION                              ([[UIDevice currentDevice] systemVersion])
+#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([SYSTEM_VERSION compare:v options:NSNumericSearch] != NSOrderedAscending)
+#define IS_IOS8_OR_ABOVE                            (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"8.0"))
+
+/**
+ *  直接生成具备自存储的属性，直接存储于NSUserDefault中，以com.XX.Special.开头为键名。
+ *  使用时，直接写INIT_DEFAULTS_BOOL(hasRecordingSettings, NO);
+ *  即会在NSUserDefault中生成一个com.XX.Special.所在文件名.hasRecordingSettings的属性值，设置后，会立即存储
+ */
+#define XXStringize_helper(x) #x
+
+#define XXStringize(x) \
+[NSString stringWithFormat:@"com.XX.Special.%@.%@",[[NSString stringWithFormat:@"%s", strrchr(__FILE__, '/') + 1] stringByDeletingPathExtension], @XXStringize_helper(x)]
+
+#define INIT_DEFAULTS_BOOL(PROPERTY, DEFAULT) INIT_DEFAULTS_HELPER(PROPERTY, DEFAULT, bool)
+#define INIT_DEFAULTS_INT(PROPERTY, DEFAULT) INIT_DEFAULTS_HELPER(PROPERTY, DEFAULT, integer)
+#define INIT_DEFAULTS_OBJECT(PROPERTY, DEFAULT) INIT_DEFAULTS_HELPER(PROPERTY, DEFAULT, object)
+
+#define SYNCHRONIZE_WITH_DEFAULTS_OBJECT(PROPERTY) SYNCHRONIZE_WITH_DEFAULTS_HELPER(PROPERTY, Object, id)
+#define SYNCHRONIZE_WITH_DEFAULTS_INT(PROPERTY) SYNCHRONIZE_WITH_DEFAULTS_HELPER(PROPERTY, Integer, NSInteger)
+#define SYNCHRONIZE_WITH_DEFAULTS_BOOL(PROPERTY) SYNCHRONIZE_WITH_DEFAULTS_HELPER(PROPERTY, Bool, BOOL)
+
+#define PROPERTY_DEFAUTLS_HELPER(PROPERTY, TYPE, PROPTYPE) @property(nonatomic, PROPTYPE, setter=set##PROPERTY:) TYPE PROPERTY;
+
+#define INIT_DEFAULTS_HELPER(PROPERTY, DEFAULT, TYPE) \
+self.PROPERTY = ([[NSUserDefaults standardUserDefaults] objectForKey:XXStringize(PROPERTY)])?[[NSUserDefaults standardUserDefaults] TYPE##ForKey:XXStringize(PROPERTY)]:DEFAULT;
+
+#define SYNCHRONIZE_WITH_DEFAULTS_HELPER(PROPERTY, TYPE, SHORT_TYPE) \
+- (void)set##PROPERTY:(SHORT_TYPE)PROPERTY \
+{ \
+_##PROPERTY = PROPERTY; \
+[[NSUserDefaults standardUserDefaults] set##TYPE:PROPERTY forKey:XXStringize(PROPERTY)]; \
+[[NSUserDefaults standardUserDefaults] synchronize]; \
+}
+
+// 常使用的颜色。
+#define yellowSubjectColor ([UIColor colorWithRed:255/255.0 green:175.0/255.0 blue:37/255.0 alpha:1.0])
+#define graySubjectColor ([UIColor colorWithRed:53/255.0 green:54.0/255.0 blue:68/255.0 alpha:1.0])
+#define blueSubjectColor ([UIColor colorWithRed:14/255.0 green:140/255.0 blue:238/255.0 alpha:1.0])
+#define kBackgroud ([UIColor colorWithRed:239/255.0 green:239/255.0 blue:244/255.0 alpha:1.0])
+#define fontTitleGray ([UIColor colorWithRed:35/255.0 green:35/255.0 blue:35/255.0 alpha:1.0])
+#define fontSubtitleGray ([UIColor colorWithRed:153/255.0 green:153/255.0 blue:153/255.0 alpha:1.0])
+#define kSwithBar ([UIColor colorWithRed:194/255.0 green:194/255.0 blue:195/255.0 alpha:1.0])
+#define shadowLightGrayColor [UIColor colorWithRed:202/255.0 green:202/255.0 blue:202/255.0 alpha:0.42]
+#define fontLightGrayColor [UIColor colorWithRed:102/255.0 green:102/255.0 blue:102/255.0 alpha:0.42]
+#define seperateViewBackground [UIColor colorWithRed:178/255.0 green:178/255.0 blue:178/255.0 alpha:0.5]
+#define calendarTextColor [UIColor colorWithRed:46/255.0 green:46/255.0 blue:57/255.0 alpha:1]
+#define otherMonthTextColor [UIColor colorWithRed:203/255.0 green:201/255.0 blue:213/255.0 alpha:1.0]
+#define seperateViewLightGray [UIColor colorWithRed:238/255.0 green:238/255.0 blue:238/255.0 alpha:1.0]
+
+#define VERSION (NSString *)[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
+
+// 用于调试时使用，可以用来调试颜色背景值，也可以用来调试逻辑。打包时该值为0
+#define inDebugTest (0)
+
+
+/****************************       项目中用到的私有配置        ****************************/
+
+#define kVCConfig_OEM_Video_1     @"huizhenshi01"
+#define kVCConfig_OEM_Video_2     @"huizhenshi02"
+#define kVCConfig_GROUPID         @"group.com.ld.huizhenshi.phone"
+#define kVCConfig_WXKeySecret     @"wxae6740a840c69269"
+#define kVCConfig_WXInforKey      @"ea32efc952c94509ccc8cf50002c905c"
+#define kVCConfig_WXImageName     @"hzs-icon"
+#define kVCConfig_Extension       @"com.ld.huizhenshi.phone.sr"
+
+/* 地址 */
+#define Online_Api_Server_Address_Cloud @"cs.zijingcloud.com"
+//#define Online_Api_Server_Address_Cloud @"bss.lalonline.com"
+//#define Online_Api_Server_Address_Cloud @"cs.lalonline.com"
+
+//#define Online_Api_Server_Address_Via @"test.datamap.cn"
+#define Online_Api_Server_Address_Via @"yun.51vmr.cn"
+//#define Online_Api_Server_Address_Via @"line2.51vmr.cn"
+//#define Online_Api_Server_Address_Via @"test1.34s.com.cn"
+
+#define Online_Record_Server_Address @"living.myvmr.cn"
+
+#define Online_MCU_Server_Address_Cloud @"mcu.myvmr.cn"
+//#define Online_Api_Server_Address_Cloud @"test.34s.cn"
+//#define Online_Api_Server_Address_Cloud @"cs.lalonline.com"
+
+/***************************************************************************************/
+
+#define kTimeStepDistance 15
+#define kEndTimeStepDistance 60
+
+
+#endif
