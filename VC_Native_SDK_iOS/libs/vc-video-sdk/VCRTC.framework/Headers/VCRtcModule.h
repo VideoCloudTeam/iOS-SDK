@@ -23,12 +23,12 @@ typedef void(^failureBlock)(NSError * error);
 @protocol VCRtcModuleDelegate <NSObject>
 @optional
 
-- (void)VCRtc:(VCRtcModule *)module didAddChannelViewController:(UIViewController *)view;
+- (void)VCRtc:(VCRtcModule *)module didAddChannelViewController:(UIViewController *)view NS_DEPRECATED_IOS(9_0,9_0,"该方法已废弃");
 
 /**
  接收远端视频
  
- @param module VCRtcModule 的示例对象
+ @param module VCRtcModule 的实例对象
  @param view 承载远端视频的界面
  @param uuid 当前视频所对应参会者的唯一标识
  */
@@ -37,7 +37,7 @@ typedef void(^failureBlock)(NSError * error);
 /**
   删除远端视频
 
- @param module VCRtcModule 的示例对象
+ @param module VCRtcModule 的实例对象
  @param view 承载远端视频的界面
  @param uuid 当前视频所对应参会者的唯一标识
  */
@@ -46,7 +46,7 @@ typedef void(^failureBlock)(NSError * error);
 /**
  接收本地视频,也就是用户自己的视频
 
- @param module  VCRtcModule 的示例对象
+ @param module  VCRtcModule 的实例对象
  @param view 承载本地视频的界面
  */
 - (void)VCRtc:(VCRtcModule *)module didAddLocalView:(VCVideoView *)view;
@@ -120,7 +120,7 @@ typedef void(^failureBlock)(NSError * error);
 
  @param module  VCRtcModule 实例对象
  @param imageStr 分享的图片地址
- @param uuid 分享端的参会者标识
+ @param uuid 分享端的参会者唯一标识
  */
 - (void)VCRtc:(VCRtcModule *)module didUpdateImage:(NSString *)imageStr uuid:(NSString *)uuid;
 
@@ -161,7 +161,7 @@ typedef void(^failureBlock)(NSError * error);
 
 /**
  获取到当前会议的会议状态
- 当调用了
+ 入会时，会首先获取当前会议的会议状态，另外当调用了
  - (void)muteAllGuest:(BOOL )mute
  success:(successBlock)success
  failure:(failureBlock)failure
@@ -285,8 +285,8 @@ typedef void(^failureBlock)(NSError * error);
                  password:(NSString *)password
                     phone:(NSString *)phone
                  nickname:(NSString *)nickname
-                  success:(successBlock)success
-                  failure:(failureBlock)failure NS_DEPRECATED_IOS(9_0,9_0,"该方法已废弃");
+                  success:(successBlock )success
+                  failure:(failureBlock )failure NS_DEPRECATED_IOS(9_0,9_0,"该方法已废弃");
 
 /**
  加入会议
@@ -313,7 +313,7 @@ typedef void(^failureBlock)(NSError * error);
 /**
  配置为专属云模型会议室
  
- @param privateCloud 是否为专属云会议室
+ @param privateCloud 是否为专属云会议室,默认为NO
  */
 - (void)configPrivateCloudPlatform:(BOOL ) privateCloud;
 
@@ -388,20 +388,13 @@ typedef void(^failureBlock)(NSError * error);
 
 /**
  配置音视频质量参数
- 
  @param profile 预先设置好的音视频配置选项
-<<<<<<< HEAD
  VCVideoProfileNone 不做参数设置
  VCVideoProfile720P 分辨率:1280x720 帧率:30fps
  VCVideoProfile480P 分辨率:640x480 帧率:25fps
  VCVideoProfile360P 分辨率:640x360 帧率:20fps
  VCVideoProfile180P 分辨率:320x180 帧率:20fps
  VCVideoProfileCustom 自定义 分辨率、帧率
-=======
- VCVideoProfileNone 不做参数设置 VCVideoProfile480P(默认)
- VCVideoProfile720P VCVideoProfile360P
- VCVideoProfile180P
->>>>>>> d22aa5864f3636fc7d70178cc0644ebbb84fd33a
  */
 - (void)configVideoProfile:(VCVideoProfile )profile ;
 
@@ -447,14 +440,14 @@ typedef void(^failureBlock)(NSError * error);
 
  @param enabled 麦克风使用
  */
-- (void)micEnable:(BOOL)enabled;
+- (void)micEnable:(BOOL )enabled;
 
 /**
  打开/禁用本地相机
  
  @param enabled 相机使用
  */
-- (void)videoEnable:(BOOL)enabled;
+- (void)videoEnable:(BOOL )enabled;
 
 /** 切换前后摄像头 */
 - (void)switchCamera;
@@ -471,7 +464,7 @@ typedef void(^failureBlock)(NSError * error);
  
  @param enabled 打开仅语音模式
  */
-- (void)onlyAudioEnable:(BOOL)enabled  ;
+- (void)onlyAudioEnable:(BOOL )enabled  ;
 
 /**
  重新连接本地音视频
@@ -495,11 +488,11 @@ typedef void(^failureBlock)(NSError * error);
  可通过 - (void)VCRtc:(VCRtcModule *)module didReceivedStatistics:(NSArray<VCMediaStat *> *)mediaStats ;
  接收到当前能收到的音视频质量参数
  */
-- (void)enableStatistics:(BOOL)enable;
+- (void)enableStatistics:(BOOL )enable;
 
 /** 当前账号退出会议，断开媒体连接 */
-- (void)exitChannelSuccess:(successBlock)success
-                   failure:(failureBlock)failure;
+- (void)exitChannelSuccess:(successBlock )success
+                   failure:(failureBlock )failure;
 
 /**
  打开SDK 中日志写入成文件
@@ -511,8 +504,8 @@ typedef void(^failureBlock)(NSError * error);
                    URLString:(NSString *)URLString;
 
 /** 结束当前会议 (需要验证当前参会者为主持人身份) */
-- (void)closeChannelSuccess:(successBlock)success
-                    failure:(failureBlock)failure;
+- (void)closeChannelSuccess:(successBlock )success
+                    failure:(failureBlock )failure;
 
 /* ------ 会议管理，当前仅部分身份参会者可用 ------ */
 
@@ -521,16 +514,16 @@ typedef void(^failureBlock)(NSError * error);
  @param message 文字信息
  */
 - (void)sendMessage:(NSString *)message
-            success:(successBlock)success
-            failure:(failureBlock)failure ;
+            success:(successBlock )success
+            failure:(failureBlock )failure ;
 
 /** 邀请平台下通讯录的地址
  protocol: 专属云环境下默认是:sip 公有云默认:auto 参会者身份是访客 streaming NO
  @param dest 通讯录地址
  */
 - (void)inviteDesitination:(NSString *)dest
-                   success:(successBlock)success
-                   failure:(failureBlock)failure ;
+                   success:(successBlock )success
+                   failure:(failureBlock )failure ;
 
 /** 邀请其他参会人
 
@@ -543,26 +536,26 @@ typedef void(^failureBlock)(NSError * error);
 - (void)inviteDestination:(NSString *)dest
                  protocol:(NSString *)protocolType
                     alias:(NSString *)name
-                     host:(BOOL)isHost
-                streaming:(BOOL)isStreaming
-                  success:(successBlock)success
-                  failure:(failureBlock)failure ;
+                     host:(BOOL )isHost
+                streaming:(BOOL )isStreaming
+                  success:(successBlock )success
+                  failure:(failureBlock )failure ;
 
 /** 开启录制 */
-- (void)enableRecordSuccess:(successBlock)success
-                    failure:(failureBlock)failure ;
+- (void)enableRecordSuccess:(successBlock )success
+                    failure:(failureBlock )failure ;
 
 /** 关闭录制 */
-- (void)disableRecordSuccess:(successBlock)success
-                     failure:(failureBlock)failure ;
+- (void)disableRecordSuccess:(successBlock )success
+                     failure:(failureBlock )failure ;
 
 /** 开启直播 */
-- (void)enableLiveSuccess:(successBlock)success
-                  failure:(failureBlock)failure ;
+- (void)enableLiveSuccess:(successBlock )success
+                  failure:(failureBlock )failure ;
 
 /** 关闭直播 */
-- (void)disableLiveSuccess:(successBlock)success
-                   failure:(failureBlock)failure ;
+- (void)disableLiveSuccess:(successBlock )success
+                   failure:(failureBlock )failure ;
 
 /**
  锁定会议
@@ -570,8 +563,8 @@ typedef void(^failureBlock)(NSError * error);
  @param lock 锁定会议
  */
 - (void)lockMeeting:(BOOL )lock
-            success:(successBlock)success
-            failure:(failureBlock)failure ;
+            success:(successBlock )success
+            failure:(failureBlock )failure ;
 
 /**
  静音全部访客
@@ -579,8 +572,8 @@ typedef void(^failureBlock)(NSError * error);
  @param mute 静音
  */
 - (void)muteAllGuest:(BOOL )mute
-             success:(successBlock)success
-             failure:(failureBlock)failure ;
+             success:(successBlock )success
+             failure:(failureBlock )failure ;
 
 
 /**
@@ -593,8 +586,8 @@ typedef void(^failureBlock)(NSError * error);
 - (void)shareImageData:(NSData *)imageData
                   open:(BOOL )open
                 change:(BOOL )change
-               success:(successBlock)success
-               failure:(failureBlock)failure ;
+               success:(successBlock )success
+               failure:(failureBlock )failure ;
 
 /**
  分享图片类型为视频流方式到会中
@@ -606,8 +599,8 @@ typedef void(^failureBlock)(NSError * error);
 - (void)shareToStreamImageData:(NSData *)imageData
                           open:(BOOL )open
                         change:(BOOL )change
-                       success:(successBlock)success
-                       failure:(failureBlock)failure ;
+                       success:(successBlock )success
+                       failure:(failureBlock )failure ;
 
 /**
  分享图片类型为白板方式到会中
@@ -615,8 +608,8 @@ typedef void(^failureBlock)(NSError * error);
  @param open 打开分享
  */
 - (void)shareToWhiteOpen:(BOOL )open
-                 success:(successBlock)success
-                 failure:(failureBlock)failure ;
+                 success:(successBlock )success
+                 failure:(failureBlock )failure ;
 
 - (void)configUseDefultViewController:(BOOL )isUsed NS_DEPRECATED_IOS(9_0,9_0,"该方法已废弃") ;
 
@@ -637,16 +630,16 @@ typedef void(^failureBlock)(NSError * error);
 - (void)updateLayoutHost:(NSString *)layout
                    guest:(NSString *)glayout
           conferenceType:(VCConferenceType )type
-                 success:(successBlock)success
-                 failure:(failureBlock)failure ;
+                 success:(successBlock )success
+                 failure:(failureBlock )failure ;
 
 /**
  某个参会者静音或取消静音 isMute YES静音 NO取消静音
  @param participant 参数格式: @{@"uuid":@"参会者唯一标识符",@"isMute":[NSNumber numberWithBool:YES]}
  */
 - (void)muteParticipant:(NSDictionary *)participant
-                success:(successBlock)success
-                failure:(failureBlock)failure ;
+                success:(successBlock )success
+                failure:(failureBlock )failure ;
 
 /**
  移除参会者
@@ -654,8 +647,8 @@ typedef void(^failureBlock)(NSError * error);
  @param participant 参数格式: @{@"uuid":@"参会者唯一标识符"}
  */
 - (void)removeParticipant:(NSDictionary *)participant
-                  success:(successBlock)success
-                  failure:(failureBlock)failure;
+                  success:(successBlock )success
+                  failure:(failureBlock )failure;
 
 /**
  修改参会者在会中显示的名
@@ -665,8 +658,8 @@ typedef void(^failureBlock)(NSError * error);
  */
 - (void)changeNameParticipant:(NSDictionary *)participant
                   withNewName:(NSString *)changedName
-                      success:(successBlock)success
-                      failure:(failureBlock)failure;
+                      success:(successBlock )success
+                      failure:(failureBlock )failure;
 
 /**
  更改参会者角色
@@ -674,8 +667,8 @@ typedef void(^failureBlock)(NSError * error);
  @param participant isChair: YES主持人 NO访客 数据格式:@{@"uuid":@"参会者唯一标识符",@"isChair":[NSNumber numberWithBool:YES]}
  */
 - (void)changeRoleParticipant:(NSDictionary *)participant
-                      success:(successBlock)success
-                      failure:(failureBlock)failure;
+                      success:(successBlock )success
+                      failure:(failureBlock )failure;
 
 /**
  会议锁定的状态下,不允许访客入会
@@ -683,8 +676,8 @@ typedef void(^failureBlock)(NSError * error);
  @param participant 数据格式: @{@"uuid":@"参会者唯一标识符"}
  */
 - (void)refusedToParticipant:(NSDictionary *)participant
-                     success:(successBlock)success
-                     failure:(failureBlock)failure;
+                     success:(successBlock )success
+                     failure:(failureBlock )failure;
 
 /**
  会议锁定状态下,允许访客入会
@@ -692,8 +685,8 @@ typedef void(^failureBlock)(NSError * error);
  @param participant 数据格式: @{@"uuid":@"参会者唯一标识符"}
  */
 - (void)allowParticipant:(NSDictionary *)participant
-                 success:(successBlock)success
-                 failure:(failureBlock)failure;
+                 success:(successBlock )success
+                 failure:(failureBlock )failure;
 
 /**
  指定参会者为焦点,设置后参会者的视频显示在会议中的第一位 spotlight: 值为0 设置为焦点
@@ -701,8 +694,8 @@ typedef void(^failureBlock)(NSError * error);
  @param participant 数据格式: @{@"uuid":@"参会者唯一标识符", @"spotlight": [NSNumber numberWithInt:0]}
  */
 - (void)spolightParticipant:(NSDictionary *)participant
-                    success:(successBlock)success
-                    failure:(failureBlock)failure;
+                    success:(successBlock )success
+                    failure:(failureBlock )failure;
 
 /**
  设置为本地主屏
@@ -712,8 +705,8 @@ typedef void(^failureBlock)(NSError * error);
  */
 - (void)stickParticipant:(NSString *)participant
                  onStick:(BOOL )stick
-                 success:(successBlock)success
-                 failure:(failureBlock)failure ;
+                 success:(successBlock )success
+                 failure:(failureBlock )failure ;
 
 /** 主动停止屏幕录制 */
 - (void)stopRecordScreen ;

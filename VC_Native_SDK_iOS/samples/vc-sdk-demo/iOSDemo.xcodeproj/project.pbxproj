@@ -23,7 +23,6 @@
 		0406BFD522D58D45002E0278 /* TZLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0406BFC422D58D45002E0278 /* TZLocationManager.m */; };
 		0406BFD622D58D45002E0278 /* TZGifPhotoPreviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0406BFC522D58D45002E0278 /* TZGifPhotoPreviewController.m */; };
 		0406BFD722D58D45002E0278 /* TZImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0406BFC622D58D45002E0278 /* TZImageRequestOperation.m */; };
-		0406BFD922D5996C002E0278 /* ErrorReason.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0406BFD822D5996C002E0278 /* ErrorReason.plist */; };
 		0406BFDC22D5998E002E0278 /* VCPresentionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0406BFDB22D5998E002E0278 /* VCPresentionView.m */; };
 		0406BFEA22D59A0E002E0278 /* YCPhotoBrowserAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0406BFE122D59A0E002E0278 /* YCPhotoBrowserAnimator.m */; };
 		0406BFEB22D59A0E002E0278 /* UIView+YCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0406BFE422D59A0E002E0278 /* UIView+YCExtension.m */; };
@@ -31,8 +30,6 @@
 		0406BFED22D59A0E002E0278 /* YCPhotoBrowserCellHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0406BFE622D59A0E002E0278 /* YCPhotoBrowserCellHelper.m */; };
 		0406BFEE22D59A0E002E0278 /* YCPhotoBrowserConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 0406BFE722D59A0E002E0278 /* YCPhotoBrowserConst.m */; };
 		0406BFEF22D59A0E002E0278 /* YCPhotoBrowserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0406BFE822D59A0E002E0278 /* YCPhotoBrowserCell.m */; };
-		0406BFF322D59A7C002E0278 /* WebRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0455AB0F22C363D100EFF39D /* WebRTC.framework */; };
-		0406BFF422D59A7C002E0278 /* WebRTC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0455AB0F22C363D100EFF39D /* WebRTC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0406C02D22D59AA3002E0278 /* SDWebImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0406BFFF22D59AA3002E0278 /* SDWebImageManager.m */; };
 		0406C02E22D59AA3002E0278 /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 0406C00122D59AA3002E0278 /* UIImageView+HighlightedWebCache.m */; };
 		0406C02F22D59AA3002E0278 /* SDWebImageFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 0406C00222D59AA3002E0278 /* SDWebImageFrame.m */; };
@@ -63,9 +60,6 @@
 		0406C04C22D5B563002E0278 /* VCCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0406C04B22D5B562002E0278 /* VCCollectionViewFlowLayout.m */; };
 		0406C04F22D5BF8F002E0278 /* ShareModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0406C04E22D5BF8F002E0278 /* ShareModel.m */; };
 		0406C05322D5F523002E0278 /* ScreenShare.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0455AB2D22C5E93600EFF39D /* ScreenShare.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		0406C06722D6DB9B002E0278 /* VCRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0406C06622D6DB9B002E0278 /* VCRTC.framework */; };
-		0406C06922D6DBC0002E0278 /* VCRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0406C06622D6DB9B002E0278 /* VCRTC.framework */; };
-		0406C06A22D6DBC0002E0278 /* VCRTC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0406C06622D6DB9B002E0278 /* VCRTC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0455AACD22C35CE800EFF39D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0455AACC22C35CE800EFF39D /* AppDelegate.m */; };
 		0455AAD022C35CE800EFF39D /* ExampleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0455AACF22C35CE800EFF39D /* ExampleVC.m */; };
 		0455AAD322C35CE800EFF39D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0455AAD122C35CE800EFF39D /* Main.storyboard */; };
@@ -78,7 +72,6 @@
 		0455AB3222C5E93600EFF39D /* SampleHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 0455AB3122C5E93600EFF39D /* SampleHandler.m */; };
 		0455AB5422C5F72900EFF39D /* ReplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0455AB1A22C5C83800EFF39D /* ReplayKit.framework */; };
 		0455AB5922C6047C00EFF39D /* ReplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0455AB1A22C5C83800EFF39D /* ReplayKit.framework */; };
-		0495179922D70AC40047FF05 /* VCRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0406C06622D6DB9B002E0278 /* VCRTC.framework */; };
 		04C908C022D8308C00B4BEEC /* NotRecordedController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C908BE22D8308C00B4BEEC /* NotRecordedController.m */; };
 		04C908C222D83CF200B4BEEC /* 01FirstSet.mov in Resources */ = {isa = PBXBuildFile; fileRef = 04C908C122D83CF200B4BEEC /* 01FirstSet.mov */; };
 		04C908C422D83D1700B4BEEC /* 02StartRecord.mov in Resources */ = {isa = PBXBuildFile; fileRef = 04C908C322D83D1600B4BEEC /* 02StartRecord.mov */; };
@@ -103,6 +96,12 @@
 		04E8CAE122D4363900D84E26 /* VideoViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8CAE022D4363900D84E26 /* VideoViewModel.m */; };
 		04E8CAEF22D46D6D00D84E26 /* ConferenceVCCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8CAED22D46D6C00D84E26 /* ConferenceVCCell.m */; };
 		04E8CAF022D46D6D00D84E26 /* ConferenceHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8CAEE22D46D6D00D84E26 /* ConferenceHeaderView.m */; };
+		1C1B0EDD22E70BC90095182D /* VCRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C1B0EDB22E70BC80095182D /* VCRTC.framework */; };
+		1C1B0EDE22E70BC90095182D /* WebRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C1B0EDC22E70BC90095182D /* WebRTC.framework */; };
+		1C1B0EDF22E70BD80095182D /* VCRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C1B0EDB22E70BC80095182D /* VCRTC.framework */; };
+		1C1B0EE022E70BD80095182D /* VCRTC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1C1B0EDB22E70BC80095182D /* VCRTC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1C1B0EE122E70BD80095182D /* WebRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C1B0EDC22E70BC90095182D /* WebRTC.framework */; };
+		1C1B0EE222E70BD80095182D /* WebRTC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1C1B0EDC22E70BC90095182D /* WebRTC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,8 +135,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				0406C06A22D6DBC0002E0278 /* VCRTC.framework in Embed Frameworks */,
-				0406BFF422D59A7C002E0278 /* WebRTC.framework in Embed Frameworks */,
+				1C1B0EE022E70BD80095182D /* VCRTC.framework in Embed Frameworks */,
+				1C1B0EE222E70BD80095182D /* WebRTC.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -187,7 +186,6 @@
 		0406BFC522D58D45002E0278 /* TZGifPhotoPreviewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZGifPhotoPreviewController.m; sourceTree = "<group>"; };
 		0406BFC622D58D45002E0278 /* TZImageRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZImageRequestOperation.m; sourceTree = "<group>"; };
 		0406BFC722D58D45002E0278 /* TZProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZProgressView.h; sourceTree = "<group>"; };
-		0406BFD822D5996C002E0278 /* ErrorReason.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ErrorReason.plist; sourceTree = "<group>"; };
 		0406BFDA22D5998E002E0278 /* VCPresentionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VCPresentionView.h; sourceTree = "<group>"; };
 		0406BFDB22D5998E002E0278 /* VCPresentionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VCPresentionView.m; sourceTree = "<group>"; };
 		0406BFDE22D59A0E002E0278 /* YCCycleProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YCCycleProgressView.h; sourceTree = "<group>"; };
@@ -261,7 +259,6 @@
 		0406C04B22D5B562002E0278 /* VCCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VCCollectionViewFlowLayout.m; sourceTree = "<group>"; };
 		0406C04D22D5BF8F002E0278 /* ShareModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShareModel.h; sourceTree = "<group>"; };
 		0406C04E22D5BF8F002E0278 /* ShareModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShareModel.m; sourceTree = "<group>"; };
-		0406C06622D6DB9B002E0278 /* VCRTC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = VCRTC.framework; sourceTree = "<group>"; };
 		0455AAC822C35CE800EFF39D /* iOSDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0455AACB22C35CE800EFF39D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0455AACC22C35CE800EFF39D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -278,7 +275,6 @@
 		0455AAEB22C35CEC00EFF39D /* iOSDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0455AAEF22C35CEC00EFF39D /* iOSDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOSDemoUITests.m; sourceTree = "<group>"; };
 		0455AAF122C35CEC00EFF39D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0455AB0F22C363D100EFF39D /* WebRTC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WebRTC.framework; sourceTree = "<group>"; };
 		0455AB1322C4530100EFF39D /* ExampleVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExampleVC.xib; sourceTree = "<group>"; };
 		0455AB1A22C5C83800EFF39D /* ReplayKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReplayKit.framework; path = System/Library/Frameworks/ReplayKit.framework; sourceTree = SDKROOT; };
 		0455AB2D22C5E93600EFF39D /* ScreenShare.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ScreenShare.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -327,6 +323,8 @@
 		04E8CAEC22D46D6C00D84E26 /* ConferenceVCCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConferenceVCCell.h; sourceTree = "<group>"; };
 		04E8CAED22D46D6C00D84E26 /* ConferenceVCCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConferenceVCCell.m; sourceTree = "<group>"; };
 		04E8CAEE22D46D6D00D84E26 /* ConferenceHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConferenceHeaderView.m; sourceTree = "<group>"; };
+		1C1B0EDB22E70BC80095182D /* VCRTC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VCRTC.framework; path = "../../../../../libs/vc-video-sdk/VCRTC.framework"; sourceTree = "<group>"; };
+		1C1B0EDC22E70BC90095182D /* WebRTC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebRTC.framework; path = "../../../../../libs/vc-video-sdk/WebRTC.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -335,9 +333,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0455AB5422C5F72900EFF39D /* ReplayKit.framework in Frameworks */,
-				0406C06922D6DBC0002E0278 /* VCRTC.framework in Frameworks */,
-				0406C06722D6DB9B002E0278 /* VCRTC.framework in Frameworks */,
-				0406BFF322D59A7C002E0278 /* WebRTC.framework in Frameworks */,
+				1C1B0EDF22E70BD80095182D /* VCRTC.framework in Frameworks */,
+				1C1B0EDD22E70BC90095182D /* VCRTC.framework in Frameworks */,
+				1C1B0EE122E70BD80095182D /* WebRTC.framework in Frameworks */,
+				1C1B0EDE22E70BC90095182D /* WebRTC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,7 +359,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0455AB5922C6047C00EFF39D /* ReplayKit.framework in Frameworks */,
-				0495179922D70AC40047FF05 /* VCRTC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -566,9 +564,8 @@
 		0455AAFD22C35D0400EFF39D /* vc-video-sdk */ = {
 			isa = PBXGroup;
 			children = (
-				0406BFD822D5996C002E0278 /* ErrorReason.plist */,
-				0406C06622D6DB9B002E0278 /* VCRTC.framework */,
-				0455AB0F22C363D100EFF39D /* WebRTC.framework */,
+				1C1B0EDB22E70BC80095182D /* VCRTC.framework */,
+				1C1B0EDC22E70BC90095182D /* WebRTC.framework */,
 			);
 			path = "vc-video-sdk";
 			sourceTree = "<group>";
@@ -810,7 +807,6 @@
 				0455AB1422C4530100EFF39D /* ExampleVC.xib in Resources */,
 				04C908C222D83CF200B4BEEC /* 01FirstSet.mov in Resources */,
 				0406BFCF22D58D45002E0278 /* TZImagePickerController.bundle in Resources */,
-				0406BFD922D5996C002E0278 /* ErrorReason.plist in Resources */,
 				04E8CAD322D343E600D84E26 /* SmallView.xib in Resources */,
 				0455AAD322C35CE800EFF39D /* Main.storyboard in Resources */,
 			);

@@ -43,7 +43,7 @@ NS_ASSUME_NONNULL_BEGIN
 /** 音视频标识 */
 @property (nonatomic, strong) NSString *ssrc;
 @property (nonatomic, strong) NSString *serviceType;
-/** 参会者为焦点时间 */
+/** 参会者为焦点事件 */
 @property (nonatomic, assign) int spotlight;
 /** 是否是主持人 */
 @property (nonatomic, assign) BOOL isChair;

@@ -25,7 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *codec;
 /** 呼叫速率 */
 @property (nonatomic, assign) NSInteger bitrate; // unit: kbps
-/** 发送包 */
+/** 发送或接收数据包的数量 */
 @property (nonatomic, assign) NSInteger packets;
 /** 发送丢包 */
 @property (nonatomic, assign) NSInteger packetsLost;
