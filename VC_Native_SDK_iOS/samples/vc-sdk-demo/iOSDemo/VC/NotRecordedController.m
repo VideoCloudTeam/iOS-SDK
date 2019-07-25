@@ -1,6 +1,6 @@
 //
-//  ZJNotRecordedController.m
-//  ZjVideo
+//  VCNotRecordedController.m
+//  VCVideo
 //
 //  Created by 李志朋 on 2018/3/16.
 //  Copyright © 2018年 Facebook. All rights reserved.
@@ -114,7 +114,7 @@
     _showView.backgroundColor = [UIColor whiteColor];
     NSAttributedString *text1 = [self jointAttributedStringWithItems:@[[self normorContent:@"1.从屏幕底部上滑打开控制中心"]]];
     NSAttributedString *text2 = [self jointAttributedStringWithItems:@[[self normorContent:@"2.用力按压录制按钮"],[self imageContent:[UIImage imageNamed:@"icon_screen_anniu"]]]];
-    NSAttributedString *text3 = [self jointAttributedStringWithItems:@[[self normorContent:[NSString stringWithFormat:@"%@%@%@", @"3.在列表找到",app_Name,NSLocalizedString(@"zjxuzhong", nil)]]]];
+    NSAttributedString *text3 = [self jointAttributedStringWithItems:@[[self normorContent:[NSString stringWithFormat:@"%@%@%@", @"3.在列表找到",app_Name,NSLocalizedString(@"VCxuzhong", nil)]]]];
     NSAttributedString *text4 = [self jointAttributedStringWithItems:@[[self normorContent:@"4.点击开始直播"]]];
     
     [_showView addSubview:[self addShowTextView:@"开始共享" andText1:text1 andText2:text2 andText3:text3 andText4:text4 showNext:NO]];

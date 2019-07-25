@@ -9,7 +9,7 @@
 
 #import "SampleHandler.h"//
 //#import "ScreenHelper.h"
-#import <ZJRTCScreenShare/ZJRTCScreenShare.h>
+#import <VCRTCScreenShare/VCRTCScreenShare.h>
 #import <VCRTC/VCRTC.h>
 
 @interface SampleHandler ()

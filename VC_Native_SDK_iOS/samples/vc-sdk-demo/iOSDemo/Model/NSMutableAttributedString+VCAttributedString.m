@@ -1,13 +1,13 @@
 //
-//  NSMutableAttributedString+ZJAttributedString.m
+//  NSMutableAttributedString+VCAttributedString.m
 //  linphone
 //
 //  Created by mac on 2019/6/14.
 //
 
-#import "NSMutableAttributedString+ZJAttributedString.h"
+#import "NSMutableAttributedString+VCAttributedString.h"
 
-@implementation NSMutableAttributedString (ZJAttributedString)
+@implementation NSMutableAttributedString (VCAttributedString)
 - (CGSize)cuculateAttributedStringWidthWithFontSize: (CGFloat)fontSize withLHeight: (CGFloat)height {
     CGSize size = CGSizeMake(1000, height);
     CGRect rect = [self boundingRectWithSize:size options:NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading

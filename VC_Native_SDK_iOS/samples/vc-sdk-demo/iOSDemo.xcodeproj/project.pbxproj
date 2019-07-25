@@ -92,7 +92,7 @@
 		04E8CAD122D343D600D84E26 /* SmallView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8CACF22D343D600D84E26 /* SmallView.m */; };
 		04E8CAD322D343E600D84E26 /* SmallView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8CAD222D343E600D84E26 /* SmallView.xib */; };
 		04E8CAD422D343E600D84E26 /* SmallView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E8CAD222D343E600D84E26 /* SmallView.xib */; };
-		04E8CADA22D42DF900D84E26 /* NSMutableAttributedString+ZJAttributedString.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8CAD822D42DF800D84E26 /* NSMutableAttributedString+ZJAttributedString.m */; };
+		04E8CADA22D42DF900D84E26 /* NSMutableAttributedString+VCAttributedString.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8CAD822D42DF800D84E26 /* NSMutableAttributedString+VCAttributedString.m */; };
 		04E8CAE122D4363900D84E26 /* VideoViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8CAE022D4363900D84E26 /* VideoViewModel.m */; };
 		04E8CAEF22D46D6D00D84E26 /* ConferenceVCCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8CAED22D46D6C00D84E26 /* ConferenceVCCell.m */; };
 		04E8CAF022D46D6D00D84E26 /* ConferenceHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8CAEE22D46D6D00D84E26 /* ConferenceHeaderView.m */; };
@@ -315,8 +315,8 @@
 		04E8CACF22D343D600D84E26 /* SmallView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SmallView.m; sourceTree = "<group>"; };
 		04E8CAD222D343E600D84E26 /* SmallView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SmallView.xib; sourceTree = "<group>"; };
 		04E8CAD522D34A6500D84E26 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		04E8CAD822D42DF800D84E26 /* NSMutableAttributedString+ZJAttributedString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableAttributedString+ZJAttributedString.m"; sourceTree = "<group>"; };
-		04E8CAD922D42DF900D84E26 /* NSMutableAttributedString+ZJAttributedString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+ZJAttributedString.h"; sourceTree = "<group>"; };
+		04E8CAD822D42DF800D84E26 /* NSMutableAttributedString+VCAttributedString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableAttributedString+VCAttributedString.m"; sourceTree = "<group>"; };
+		04E8CAD922D42DF900D84E26 /* NSMutableAttributedString+VCAttributedString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+VCAttributedString.h"; sourceTree = "<group>"; };
 		04E8CADF22D4363900D84E26 /* VideoViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoViewModel.h; sourceTree = "<group>"; };
 		04E8CAE022D4363900D84E26 /* VideoViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoViewModel.m; sourceTree = "<group>"; };
 		04E8CAEB22D46D6C00D84E26 /* ConferenceHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConferenceHeaderView.h; sourceTree = "<group>"; };
@@ -368,7 +368,7 @@
 		0406BFA722D58D09002E0278 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
-				04C908CE22D8608700B4BEEC /* ZJPDFToJPG */,
+				04C908CE22D8608700B4BEEC /* PDFToJPG */,
 				0406BFF722D59AA3002E0278 /* SDWebImage */,
 				0406BFDD22D59A0E002E0278 /* Helper */,
 				0455AAFD22C35D0400EFF39D /* vc-video-sdk */,
@@ -590,7 +590,7 @@
 			path = ScreenShare;
 			sourceTree = "<group>";
 		};
-		04C908CE22D8608700B4BEEC /* ZJPDFToJPG */ = {
+		04C908CE22D8608700B4BEEC /* PDFToJPG */ = {
 			isa = PBXGroup;
 			children = (
 				04C908CF22D8608700B4BEEC /* PDFView.m */,
@@ -608,7 +608,7 @@
 				04C908DB22D8608700B4BEEC /* UIImage+PDF.m */,
 				04C908DC22D8608700B4BEEC /* UIView+Image.m */,
 			);
-			path = ZJPDFToJPG;
+			path = PDFToJPG;
 			sourceTree = "<group>";
 		};
 		04E8CACC22D3437500D84E26 /* VC */ = {
@@ -651,8 +651,8 @@
 		04E8CAD722D42DD400D84E26 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				04E8CAD922D42DF900D84E26 /* NSMutableAttributedString+ZJAttributedString.h */,
-				04E8CAD822D42DF800D84E26 /* NSMutableAttributedString+ZJAttributedString.m */,
+				04E8CAD922D42DF900D84E26 /* NSMutableAttributedString+VCAttributedString.h */,
+				04E8CAD822D42DF800D84E26 /* NSMutableAttributedString+VCAttributedString.m */,
 				04E8CADF22D4363900D84E26 /* VideoViewModel.h */,
 				04E8CAE022D4363900D84E26 /* VideoViewModel.m */,
 				0406C04D22D5BF8F002E0278 /* ShareModel.h */,
@@ -768,7 +768,7 @@
 						CreatedOnToolsVersion = 10.2.1;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -859,7 +859,7 @@
 				0406BFCE22D58D45002E0278 /* TZPhotoPreviewController.m in Sources */,
 				0406BFCA22D58D45002E0278 /* TZVideoPlayerController.m in Sources */,
 				0406C03822D59AA3002E0278 /* SDWebImageCoder.m in Sources */,
-				04E8CADA22D42DF900D84E26 /* NSMutableAttributedString+ZJAttributedString.m in Sources */,
+				04E8CADA22D42DF900D84E26 /* NSMutableAttributedString+VCAttributedString.m in Sources */,
 				04E8CAD022D343D600D84E26 /* SmallView.m in Sources */,
 				0406C04022D59AA3002E0278 /* NSImage+WebCache.m in Sources */,
 				04E8CAC622D324BE00D84E26 /* ViewController.m in Sources */,
@@ -1118,7 +1118,7 @@
 					"-Objc",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zijingcloud.phone;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vcsdk-demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1149,7 +1149,7 @@
 					"-Objc",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zijingcloud.phone;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vcsdk-demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1232,7 +1232,6 @@
 		0455AB4B22C5E93600EFF39D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = ScreenShare/ScreenShare.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QZ5HTJ6XNT;
 				ENABLE_BITCODE = NO;
@@ -1248,7 +1247,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zijingcloud.phone.ZjScreenRecord;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vcsdk-demo.record";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1258,7 +1257,6 @@
 		0455AB4C22C5E93600EFF39D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = ScreenShare/ScreenShare.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QZ5HTJ6XNT;
 				ENABLE_BITCODE = NO;
@@ -1274,7 +1272,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zijingcloud.phone.ZjScreenRecord;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vcsdk-demo.record";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";

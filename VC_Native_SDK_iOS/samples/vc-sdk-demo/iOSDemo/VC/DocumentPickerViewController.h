@@ -1,6 +1,6 @@
 //
-//  ZjDocumentPickerViewController.h
-//  ZJRTC
+//  DocumentPickerViewController.h
+//  RTC
 //
 //  Created by 李志朋 on 2019/2/21.
 //  Copyright © 2019年 zijingcloud. All rights reserved.

@@ -1,5 +1,5 @@
 //
-//  NSMutableAttributedString+ZJAttributedString.h
+//  NSMutableAttributedString+VCAttributedString.h
 //  linphone
 //
 //  Created by mac on 2019/6/14.
@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NSMutableAttributedString (ZJAttributedString)
+@interface NSMutableAttributedString (VCAttributedString)
 - (CGSize)cuculateAttributedStringWidthWithFontSize: (CGFloat)fontSize withLHeight: (CGFloat)height;
 - (CGSize)cuculateAttributedStringHeightWithFontSize: (CGFloat)fontSize withWidth: (CGFloat)width;
 @end

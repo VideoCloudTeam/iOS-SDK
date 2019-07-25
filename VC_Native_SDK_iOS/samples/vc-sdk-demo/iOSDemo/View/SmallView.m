@@ -7,7 +7,7 @@
 //
 
 #import "SmallView.h"
-#import "NSMutableAttributedString+ZJAttributedString.h"
+#import "NSMutableAttributedString+VCAttributedString.h"
 
 
 @interface SmallView ()
