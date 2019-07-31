@@ -1,6 +1,0 @@
-framework module VCRTCScreenShare {
-  umbrella header "VCRTCScreenShare.h"
-
-  export *
-  module * { export * }
-}
