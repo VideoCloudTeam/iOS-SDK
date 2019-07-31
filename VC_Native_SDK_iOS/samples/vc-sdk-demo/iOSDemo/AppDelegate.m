@@ -16,7 +16,7 @@
 
 @implementation AppDelegate
 
-
+///Users/lizhipeng/Desktop/VC_SDK_GIt/VC_Native_SDK_iOS/samples/vc-sdk-demo/iOSDemo/Framework/vc-video-sdk/WebRTC.framework
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];

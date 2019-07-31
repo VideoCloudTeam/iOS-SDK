@@ -70,7 +70,6 @@
 		0455AAF022C35CEC00EFF39D /* iOSDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0455AAEF22C35CEC00EFF39D /* iOSDemoUITests.m */; };
 		0455AB1422C4530100EFF39D /* ExampleVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0455AB1322C4530100EFF39D /* ExampleVC.xib */; };
 		0455AB3222C5E93600EFF39D /* SampleHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 0455AB3122C5E93600EFF39D /* SampleHandler.m */; };
-		0455AB5422C5F72900EFF39D /* ReplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0455AB1A22C5C83800EFF39D /* ReplayKit.framework */; };
 		0455AB5922C6047C00EFF39D /* ReplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0455AB1A22C5C83800EFF39D /* ReplayKit.framework */; };
 		04C908C022D8308C00B4BEEC /* NotRecordedController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C908BE22D8308C00B4BEEC /* NotRecordedController.m */; };
 		04C908C222D83CF200B4BEEC /* 01FirstSet.mov in Resources */ = {isa = PBXBuildFile; fileRef = 04C908C122D83CF200B4BEEC /* 01FirstSet.mov */; };
@@ -96,12 +95,11 @@
 		04E8CAE122D4363900D84E26 /* VideoViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8CAE022D4363900D84E26 /* VideoViewModel.m */; };
 		04E8CAEF22D46D6D00D84E26 /* ConferenceVCCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8CAED22D46D6C00D84E26 /* ConferenceVCCell.m */; };
 		04E8CAF022D46D6D00D84E26 /* ConferenceHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8CAEE22D46D6D00D84E26 /* ConferenceHeaderView.m */; };
-		1C1B0EDD22E70BC90095182D /* VCRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C1B0EDB22E70BC80095182D /* VCRTC.framework */; };
-		1C1B0EDE22E70BC90095182D /* WebRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C1B0EDC22E70BC90095182D /* WebRTC.framework */; };
-		1C1B0EDF22E70BD80095182D /* VCRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C1B0EDB22E70BC80095182D /* VCRTC.framework */; };
-		1C1B0EE022E70BD80095182D /* VCRTC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1C1B0EDB22E70BC80095182D /* VCRTC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1C1B0EE122E70BD80095182D /* WebRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C1B0EDC22E70BC90095182D /* WebRTC.framework */; };
-		1C1B0EE222E70BD80095182D /* WebRTC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1C1B0EDC22E70BC90095182D /* WebRTC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1CBB593F22F142B900057A28 /* VCRTCScreenShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CBB593D22F1427400057A28 /* VCRTCScreenShare.framework */; };
+		1CBB594022F1471F00057A28 /* VCRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CBB593922F141F300057A28 /* VCRTC.framework */; };
+		1CBB594122F1471F00057A28 /* VCRTC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1CBB593922F141F300057A28 /* VCRTC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1CBB594222F1471F00057A28 /* WebRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CBB593A22F141F300057A28 /* WebRTC.framework */; };
+		1CBB594322F1471F00057A28 /* WebRTC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1CBB593A22F141F300057A28 /* WebRTC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,8 +133,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				1C1B0EE022E70BD80095182D /* VCRTC.framework in Embed Frameworks */,
-				1C1B0EE222E70BD80095182D /* WebRTC.framework in Embed Frameworks */,
+				1CBB594122F1471F00057A28 /* VCRTC.framework in Embed Frameworks */,
+				1CBB594322F1471F00057A28 /* WebRTC.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -323,8 +321,9 @@
 		04E8CAEC22D46D6C00D84E26 /* ConferenceVCCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConferenceVCCell.h; sourceTree = "<group>"; };
 		04E8CAED22D46D6C00D84E26 /* ConferenceVCCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConferenceVCCell.m; sourceTree = "<group>"; };
 		04E8CAEE22D46D6D00D84E26 /* ConferenceHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConferenceHeaderView.m; sourceTree = "<group>"; };
-		1C1B0EDB22E70BC80095182D /* VCRTC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VCRTC.framework; path = "../../../../../libs/vc-video-sdk/VCRTC.framework"; sourceTree = "<group>"; };
-		1C1B0EDC22E70BC90095182D /* WebRTC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebRTC.framework; path = "../../../../../libs/vc-video-sdk/WebRTC.framework"; sourceTree = "<group>"; };
+		1CBB593922F141F300057A28 /* VCRTC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = VCRTC.framework; sourceTree = "<group>"; };
+		1CBB593A22F141F300057A28 /* WebRTC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WebRTC.framework; sourceTree = "<group>"; };
+		1CBB593D22F1427400057A28 /* VCRTCScreenShare.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = VCRTCScreenShare.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -332,11 +331,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0455AB5422C5F72900EFF39D /* ReplayKit.framework in Frameworks */,
-				1C1B0EDF22E70BD80095182D /* VCRTC.framework in Frameworks */,
-				1C1B0EDD22E70BC90095182D /* VCRTC.framework in Frameworks */,
-				1C1B0EE122E70BD80095182D /* WebRTC.framework in Frameworks */,
-				1C1B0EDE22E70BC90095182D /* WebRTC.framework in Frameworks */,
+				1CBB594022F1471F00057A28 /* VCRTC.framework in Frameworks */,
+				1CBB594222F1471F00057A28 /* WebRTC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +354,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CBB593F22F142B900057A28 /* VCRTCScreenShare.framework in Frameworks */,
 				0455AB5922C6047C00EFF39D /* ReplayKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -564,8 +561,9 @@
 		0455AAFD22C35D0400EFF39D /* vc-video-sdk */ = {
 			isa = PBXGroup;
 			children = (
-				1C1B0EDB22E70BC80095182D /* VCRTC.framework */,
-				1C1B0EDC22E70BC90095182D /* WebRTC.framework */,
+				1CBB593D22F1427400057A28 /* VCRTCScreenShare.framework */,
+				1CBB593922F141F300057A28 /* VCRTC.framework */,
+				1CBB593A22F141F300057A28 /* WebRTC.framework */,
 			);
 			path = "vc-video-sdk";
 			sourceTree = "<group>";
@@ -752,7 +750,7 @@
 						CreatedOnToolsVersion = 10.2.1;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -1097,7 +1095,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = iOSDemo/iOSDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QZ5HTJ6XNT;
 				ENABLE_BITCODE = NO;
@@ -1107,7 +1104,12 @@
 					"$(PROJECT_DIR)/iOSDemo/Framework/vc-video-sdk",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/iOSDemo/PrefixHeader.pch";
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/iOSDemo/vc-video-sdk/VCRTC.framework";
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/iOSDemo/Framework/vc-video-sdk/VCRTC.framework",
+					"$(PROJECT_DIR)/iOSDemo/Framework/vc-video-sdk/VCRTC.framework/Headers",
+					"$(PROJECT_DIR)/iOSDemo/Framework/vc-video-sdk/VCRTC.framework",
+					"$(PROJECT_DIR)/iOSDemo/Framework/vc-video-sdk/WebRTC.framework/Headers",
+				);
 				INFOPLIST_FILE = iOSDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1128,7 +1130,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = iOSDemo/iOSDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QZ5HTJ6XNT;
 				ENABLE_BITCODE = NO;
@@ -1138,7 +1139,12 @@
 					"$(PROJECT_DIR)/iOSDemo/Framework/vc-video-sdk",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/iOSDemo/PrefixHeader.pch";
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/iOSDemo/vc-video-sdk/VCRTC.framework";
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/iOSDemo/Framework/vc-video-sdk/VCRTC.framework",
+					"$(PROJECT_DIR)/iOSDemo/Framework/vc-video-sdk/VCRTC.framework/Headers",
+					"$(PROJECT_DIR)/iOSDemo/Framework/vc-video-sdk/VCRTC.framework",
+					"$(PROJECT_DIR)/iOSDemo/Framework/vc-video-sdk/WebRTC.framework/Headers",
+				);
 				INFOPLIST_FILE = iOSDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1241,6 +1247,10 @@
 					"$(PROJECT_DIR)/iOSDemo/Framework/vc-video-sdk",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/iOSDemo/PrefixHeader.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/iOSDemo/vc-video-sdk/VCRTC.framework/Headers",
+					"$(PROJECT_DIR)/iOSDemo/vc-video-sdk/WebRTC.framework/Headers",
+				);
 				INFOPLIST_FILE = ScreenShare/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1266,6 +1276,10 @@
 					"$(PROJECT_DIR)/iOSDemo/Framework/vc-video-sdk",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/iOSDemo/PrefixHeader.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/iOSDemo/vc-video-sdk/VCRTC.framework/Headers",
+					"$(PROJECT_DIR)/iOSDemo/vc-video-sdk/WebRTC.framework/Headers",
+				);
 				INFOPLIST_FILE = ScreenShare/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

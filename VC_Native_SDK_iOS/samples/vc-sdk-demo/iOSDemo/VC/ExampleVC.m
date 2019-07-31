@@ -16,6 +16,7 @@
 #import "NotRecordedController.h"
 #import "DocumentPickerViewController.h"
 #import "PDFHandle.h"
+
 @interface ExampleVC ()<VCRtcModuleDelegate,TZImagePickerControllerDelegate,VCPresentionViewDelegate, UIDocumentPickerDelegate>
 @property (nonatomic, strong) VCRtcModule *vcrtc;
 /** 远端视图 */
@@ -107,7 +108,7 @@
     //入会类型配置 点对点
     [self.vcrtc configConnectType:VCConnectTypeUser];
     //入会音视频质量配置
-    [self.vcrtc configVideoProfile:VCVideoProfile480P];
+    [self.vcrtc configVideoProfile:VCVideoProfile360P];
     //入会接收流的方式配置
     [self.vcrtc configMultistream:self.isMultistream];
     [self.vcrtc configPrivateCloudPlatform:YES];

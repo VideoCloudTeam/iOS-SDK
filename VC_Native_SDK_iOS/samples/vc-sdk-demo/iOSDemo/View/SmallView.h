@@ -20,7 +20,6 @@ NS_ASSUME_NONNULL_BEGIN
 
  @param videoView VCVideoView实例变量 视频界面
  @param isTurnOffTheCamera 是否关闭摄像头
- @param overlayText 会中显示昵称
  @param isBig YES 大视频视图 NO 小视频视图
  */
 + (instancetype)loadSmallViewWithVideoView: (VCVideoView *)videoView isTurnOffTheCamera: (BOOL)isTurnOffTheCamera withParticipant: (Participant *)participant isBig: (BOOL) isBig uuid: (NSString *)uuid;

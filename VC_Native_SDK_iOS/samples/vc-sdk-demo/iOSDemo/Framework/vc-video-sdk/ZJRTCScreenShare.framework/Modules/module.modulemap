@@ -1,6 +1,0 @@
-framework module ZJRTCScreenShare {
-  umbrella header "ZJRTCScreenShare.h"
-
-  export *
-  module * { export * }
-}
