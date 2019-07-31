@@ -67,6 +67,19 @@
     [self.navigationController presentViewController:vc animated:YES completion:nil];
 }
 
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    if (!self.severField.isExclusiveTouch) {
+        [self.severField resignFirstResponder] ;
+    }
+    
+    if (!self.meetingNumField.isExclusiveTouch) {
+        [self.meetingNumField resignFirstResponder] ;
+    }
+
+    if (!self.joinPwdField.isExclusiveTouch) {
+        [self.joinPwdField resignFirstResponder] ;
+    }
+}
 
 /*
 #pragma mark - Navigation

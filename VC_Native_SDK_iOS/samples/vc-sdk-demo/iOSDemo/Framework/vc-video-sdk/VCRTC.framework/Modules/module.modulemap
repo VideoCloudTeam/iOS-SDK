@@ -1,0 +1,6 @@
+framework module VCRTC {
+  umbrella header "VCRTC.h"
+
+  export *
+  module * { export * }
+}

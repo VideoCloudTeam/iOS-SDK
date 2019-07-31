@@ -33,6 +33,13 @@
 	<string>iOSDemo想访问你的麦克风</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>iOSDemo想访问你的相册</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>audio</string>
+		<string>fetch</string>
+		<string>remote-notification</string>
+		<string>voip</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

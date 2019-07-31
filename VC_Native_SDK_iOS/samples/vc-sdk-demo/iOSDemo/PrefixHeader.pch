@@ -19,7 +19,7 @@
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
 #define IS_PhoneXAll (IS_IPHONE_X || IS_IPHONE_Xr || IS_IPHONE_Xs_Max)
 
-#define kGroupId @"填写屏幕录制groupId"
+#define kGroupId @"group.com.vcsdk-demo"
 #define kScreenRecordState @"screen_record_open_state"//屏幕录制状态 start 开始录制 stop 停止录制 applaunch app刚进入 ongoging 录制屏幕进行中
 #define kScreenRecordMeetingState @"screen_record_meeting_state"//会议状态 outmeeting没入会 inmeeting 会中
 
