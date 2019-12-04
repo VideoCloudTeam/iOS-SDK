@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "ExampleVC.h"
+#import "LoginViewController.h"
 
 @interface ViewController ()
 /** 服务器地址 */
@@ -31,6 +32,14 @@
     self.severField.text = [[NSUserDefaults standardUserDefaults]objectForKey:@"serverAddress"];
     self.meetingNumField.text = [[NSUserDefaults standardUserDefaults]objectForKey:@"meetingNumber"];
     self.joinPwdField.text = [[NSUserDefaults standardUserDefaults]objectForKey:@"joinPassword"];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"登录" style:UIBarButtonItemStylePlain target:self action:@selector(loginAction:)];
+    
+}
+
+- (void)loginAction:(UIBarButtonItem *) barButton {
+    LoginViewController *loginVc = [[LoginViewController alloc] init];
+    [self.navigationController pushViewController:loginVc animated:YES] ;
 }
 
 - (IBAction)mutistreamAction:(UISwitch *)sender {
