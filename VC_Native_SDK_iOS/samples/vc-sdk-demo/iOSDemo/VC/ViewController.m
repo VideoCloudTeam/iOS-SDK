@@ -64,6 +64,7 @@
     vc.passwordString = self.joinPwdField.text;
     vc.isMultistream = self.multistreamSwitch.on;
     vc.isPrivateCloud = self.privateCloudSwitch.on;
+    vc.modalPresentationStyle = UIModalPresentationFullScreen;
     [self.navigationController presentViewController:vc animated:YES completion:nil];
 }
 
