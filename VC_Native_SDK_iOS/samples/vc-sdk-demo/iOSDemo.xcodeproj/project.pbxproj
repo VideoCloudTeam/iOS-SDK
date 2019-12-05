@@ -59,7 +59,6 @@
 		0406C04922D5B4AF002E0278 /* UIImage+tag.m in Sources */ = {isa = PBXBuildFile; fileRef = 0406C04822D5B4AF002E0278 /* UIImage+tag.m */; };
 		0406C04C22D5B563002E0278 /* VCCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0406C04B22D5B562002E0278 /* VCCollectionViewFlowLayout.m */; };
 		0406C04F22D5BF8F002E0278 /* ShareModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0406C04E22D5BF8F002E0278 /* ShareModel.m */; };
-		0406C05322D5F523002E0278 /* ScreenShare.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0455AB2D22C5E93600EFF39D /* ScreenShare.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		0455AACD22C35CE800EFF39D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0455AACC22C35CE800EFF39D /* AppDelegate.m */; };
 		0455AAD022C35CE800EFF39D /* ExampleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0455AACF22C35CE800EFF39D /* ExampleVC.m */; };
 		0455AAD322C35CE800EFF39D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0455AAD122C35CE800EFF39D /* Main.storyboard */; };
@@ -107,13 +106,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0406C05422D5F523002E0278 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0455AAC022C35CE800EFF39D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0455AB2C22C5E93600EFF39D;
-			remoteInfo = ScreenShare;
-		};
 		0455AAE122C35CEC00EFF39D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0455AAC022C35CE800EFF39D /* Project object */;
@@ -142,17 +134,6 @@
 				1CBB594322F1471F00057A28 /* WebRTC.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0406C05622D5F524002E0278 /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				0406C05322D5F523002E0278 /* ScreenShare.appex in Embed App Extensions */,
-			);
-			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -684,12 +665,10 @@
 				0455AAC522C35CE800EFF39D /* Frameworks */,
 				0455AAC622C35CE800EFF39D /* Resources */,
 				0406BFF222D59A79002E0278 /* Embed Frameworks */,
-				0406C05622D5F524002E0278 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				0406C05522D5F523002E0278 /* PBXTargetDependency */,
 			);
 			name = iOSDemo;
 			productName = iOSDemo;
@@ -959,11 +938,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		0406C05522D5F523002E0278 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 0455AB2C22C5E93600EFF39D /* ScreenShare */;
-			targetProxy = 0406C05422D5F523002E0278 /* PBXContainerItemProxy */;
-		};
 		0455AAE222C35CEC00EFF39D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 0455AAC722C35CE800EFF39D /* iOSDemo */;
@@ -1259,7 +1233,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = ScreenShare/ScreenShare.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Z8SE9YCY23;
+				DEVELOPMENT_TEAM = 82LZ3W2RXX;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1277,7 +1251,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.vcsdk-demo.phone.record";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vcsdk-dem---";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1289,7 +1263,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = ScreenShare/ScreenShare.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Z8SE9YCY23;
+				DEVELOPMENT_TEAM = 82LZ3W2RXX;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1307,7 +1281,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.vcsdk-demo.phone.record";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vcsdk-dem---";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
