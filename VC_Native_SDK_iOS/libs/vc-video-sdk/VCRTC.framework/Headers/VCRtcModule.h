@@ -82,6 +82,19 @@ typedef void(^failureBlock)(NSError * error);
  @param message 消息内容
  */
 - (void)VCRtc:(VCRtcModule *)module didReceivedMessage:(NSDictionary *)message;
+/**
+ 接收到会中字幕
+ 
+ @param module VCRtcModule 的示例对象
+ @param subtitlesmessage 字幕消息内容
+ {
+ origin = Admin;
+ payload = "\U5927\U98ce\U5927\U6d6a\U75af\U72c2\U593a\U91d1";
+ type = "text/plain";
+ uuid = "";
+ };
+ */
+- (void)VCRtc:(VCRtcModule *)module didReceivedSubtitlesMessage:(NSDictionary *)subtitlesmessage;
 
 /**
  获取会中正在发言的参会者列表
@@ -221,6 +234,11 @@ typedef void(^failureBlock)(NSError * error);
  */
 - (void)VCRtc:(VCRtcModule *)module didStopWhiteBoard:(NSString *)shareUrl withUuid:(NSString *)uuid ;
 
+- (void)VCRtc:(VCRtcModule *)module didStartLocal:(NSString *)shareUrl withUuid:(NSString *)uuid ;
+
+- (void)VCRtc:(VCRtcModule *)module didStopLocal:(NSString *)shareUrl withUuid:(NSString *)uuid ;
+- (void)VCRtc:(VCRtcModule *)module refuseAnswerCall: (NSDictionary *)data;
+
 /**
  加入会议失败
  
@@ -228,6 +246,19 @@ typedef void(^failureBlock)(NSError * error);
  @param reason 失败原因
  */
 - (void)VCRtc:(VCRtcModule *)module didDisconnectedWithReason:(NSError *)reason;
+/**
+ 当用户登录之后，接收到的平台邀请信息。
+ @param incomingInfo 被叫入会信息
+    bsskey : 平台验证信息
+    "conference_alias" : 加入的会议号码;
+    event : incoming ;
+    "remote_alias" :  主叫地址;
+    "remote_display_name" : 主叫显示名称;
+    "service_type" : 通话类型 conference ;
+    time :  发起时间戳 ;
+    token : 入会信令;
+ */
+- (void)VCRtc:(VCRtcModule *)module didIncomingCallInfo:(NSDictionary *)incomingInfo;
 
 @end
 
@@ -252,21 +283,30 @@ typedef void(^failureBlock)(NSError * error);
 /** 屏幕旋转方向 默认none */
 @property(nonatomic, assign) UIDeviceOrientation forceOrientation;
 /** 参会者身份 */
-@property (nonatomic, strong) NSString *role ;
+@property (nonatomic, strong) NSString *role;
 /** 支持直播功能 */
-@property (nonatomic, assign) BOOL isSupportLive ;
+@property (nonatomic, assign) BOOL isSupportLive;
 /** 支持录制功能 */
-@property (nonatomic, assign) BOOL isSupportRecord ;
-/** 呼叫的名称 */
-@property (nonatomic, strong) NSString *callName ;
+@property (nonatomic, assign) BOOL isSupportRecord;
+/** 呼叫短号 */
+@property (nonatomic, strong) NSString *callName;
 /** 会中分享的image地址 */
 @property (nonatomic, strong) NSString *shareImageURL;
 /** 图片、PDF分享成流时使用。 */
-@property (nonatomic, strong) NSString *localShareUuid ;
+@property (nonatomic, strong) NSString *localShareUuid;
 /** 音视频连接类型 */
-@property (nonatomic, assign) VCCallType callType ;
+@property (nonatomic, assign) VCCallType callType;
 /** 会议连接类型 */
-@property (nonatomic, assign) VCConnectType connectType ;
+@property (nonatomic, assign) VCConnectType connectType;
+/* 是否为专属云模型 */
+@property (nonatomic, assign) BOOL isShiTong;
+/** https端口号 */
+@property (nonatomic, copy) NSString *https_port;
+/** http端口号 */
+@property (nonatomic, copy) NSString *http_port;
+/** 点对点呼叫的名字 */
+@property (nonatomic, copy) NSString *conferenceName;
+
 
 /** 单例*/
 + (instancetype)sharedInstance;
@@ -289,11 +329,41 @@ typedef void(^failureBlock)(NSError * error);
                   failure:(failureBlock )failure NS_DEPRECATED_IOS(9_0,9_0,"该方法已废弃");
 
 /**
+ 登录用户名到平台
+ 
+ @param account 登录名
+ @param password 登录密码
+ */
+- (void)loginWithAccount:(NSString *)account
+                password:(NSString *)password
+                 success:(successBlock )success
+                 failure:(failureBlock )failure ;
+
+/**
+登录用户名到平台
+
+@param account 登录名
+@param password 登录密码
+@param token Push deviceToken 格式  (上传证书名称md5加密)_(设备获取的deviceToken) 为token
+ 注： 此方法需要先在App中搭建苹果公司提供的APNS环境后才能使用。
+*/
+- (void)loginWithAccount:(NSString *)account
+                password:(NSString *)password
+               voipToken:(NSString *)token
+                 success:(successBlock )success
+                 failure:(failureBlock )failure ;
+/**
+登出当前设备的账号。
+*/
+- (void)logoutAccountSuccess:(successBlock)success
+                     failure:(failureBlock)failure ;
+
+/**
  加入会议
  
  @param channel 会议短号或长地址 (必填)
- @param password 入会密码 (必填) ,若当前会议室没有密码,传空字符串
- @param name 入会显示名称 (必填)
+ @param password 入会密码 (选填) ,若当前会议室没有密码,传空字符串
+ @param name 入会显示名称 (选填)
  */
 - (void)connectChannel:(nonnull NSString *)channel
               password:(NSString *)password
@@ -521,7 +591,7 @@ typedef void(^failureBlock)(NSError * error);
  protocol: 专属云环境下默认是:sip 公有云默认:auto 参会者身份是访客 streaming NO
  @param dest 通讯录地址
  */
-- (void)inviteDesitination:(NSString *)dest
+- (void)inviteDesitination:(id)dest
                    success:(successBlock )success
                    failure:(failureBlock )failure ;
 
@@ -533,7 +603,7 @@ typedef void(^failureBlock)(NSError * error);
  @param isHost 参会身份
  @param isStreaming 发送流方式
  */
-- (void)inviteDestination:(NSString *)dest
+- (void)inviteDestination:(id)dest
                  protocol:(NSString *)protocolType
                     alias:(NSString *)name
                      host:(BOOL )isHost
@@ -710,6 +780,10 @@ typedef void(^failureBlock)(NSError * error);
 
 /** 主动停止屏幕录制 */
 - (void)stopRecordScreen ;
+
+// 主动获取音视频质量参数
+- (void)getStatBlock:(nullable void (^)(NSArray<VCMediaStat *> *stats))completionHandler;
+
 
 
 @end
