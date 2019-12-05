@@ -95,13 +95,13 @@
 		04E8CAE122D4363900D84E26 /* VideoViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8CAE022D4363900D84E26 /* VideoViewModel.m */; };
 		04E8CAEF22D46D6D00D84E26 /* ConferenceVCCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8CAED22D46D6C00D84E26 /* ConferenceVCCell.m */; };
 		04E8CAF022D46D6D00D84E26 /* ConferenceHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8CAEE22D46D6D00D84E26 /* ConferenceHeaderView.m */; };
-		04F7C3CA2398A64C00C28A3F /* VCRTCScreenShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F7C3C52398A64C00C28A3F /* VCRTCScreenShare.framework */; };
-		04F7C3CC2398A64C00C28A3F /* VCRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F7C3C72398A64C00C28A3F /* VCRTC.framework */; };
-		04F7C3CE2398A64C00C28A3F /* WebRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F7C3C82398A64C00C28A3F /* WebRTC.framework */; };
-		04F7C3CF2398A65500C28A3F /* VCRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F7C3C72398A64C00C28A3F /* VCRTC.framework */; };
-		04F7C3D02398A65500C28A3F /* VCRTC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 04F7C3C72398A64C00C28A3F /* VCRTC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		04F7C3D12398A65B00C28A3F /* WebRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F7C3C82398A64C00C28A3F /* WebRTC.framework */; };
-		04F7C3D22398A65B00C28A3F /* WebRTC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 04F7C3C82398A64C00C28A3F /* WebRTC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		04F7C3DA2398F09100C28A3F /* VCRTCScreenShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F7C3D52398F09100C28A3F /* VCRTCScreenShare.framework */; };
+		04F7C3DC2398F09100C28A3F /* VCRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F7C3D72398F09100C28A3F /* VCRTC.framework */; };
+		04F7C3DE2398F09100C28A3F /* WebRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F7C3D82398F09100C28A3F /* WebRTC.framework */; };
+		04F7C3DF2398F09D00C28A3F /* VCRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F7C3D72398F09100C28A3F /* VCRTC.framework */; };
+		04F7C3E02398F09D00C28A3F /* VCRTC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 04F7C3D72398F09100C28A3F /* VCRTC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		04F7C3E12398F09E00C28A3F /* WebRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F7C3D82398F09100C28A3F /* WebRTC.framework */; };
+		04F7C3E22398F09E00C28A3F /* WebRTC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 04F7C3D82398F09100C28A3F /* WebRTC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -146,8 +146,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				04F7C3D02398A65500C28A3F /* VCRTC.framework in Embed Frameworks */,
-				04F7C3D22398A65B00C28A3F /* WebRTC.framework in Embed Frameworks */,
+				04F7C3E02398F09D00C28A3F /* VCRTC.framework in Embed Frameworks */,
+				04F7C3E22398F09E00C28A3F /* WebRTC.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -323,9 +323,9 @@
 		04E8CAEC22D46D6C00D84E26 /* ConferenceVCCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConferenceVCCell.h; sourceTree = "<group>"; };
 		04E8CAED22D46D6C00D84E26 /* ConferenceVCCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConferenceVCCell.m; sourceTree = "<group>"; };
 		04E8CAEE22D46D6D00D84E26 /* ConferenceHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConferenceHeaderView.m; sourceTree = "<group>"; };
-		04F7C3C52398A64C00C28A3F /* VCRTCScreenShare.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = VCRTCScreenShare.framework; sourceTree = "<group>"; };
-		04F7C3C72398A64C00C28A3F /* VCRTC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = VCRTC.framework; sourceTree = "<group>"; };
-		04F7C3C82398A64C00C28A3F /* WebRTC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WebRTC.framework; sourceTree = "<group>"; };
+		04F7C3D52398F09100C28A3F /* VCRTCScreenShare.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = VCRTCScreenShare.framework; sourceTree = "<group>"; };
+		04F7C3D72398F09100C28A3F /* VCRTC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = VCRTC.framework; sourceTree = "<group>"; };
+		04F7C3D82398F09100C28A3F /* WebRTC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WebRTC.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -333,8 +333,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04F7C3CF2398A65500C28A3F /* VCRTC.framework in Frameworks */,
-				04F7C3D12398A65B00C28A3F /* WebRTC.framework in Frameworks */,
+				04F7C3DF2398F09D00C28A3F /* VCRTC.framework in Frameworks */,
+				04F7C3E12398F09E00C28A3F /* WebRTC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,9 +357,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0455AB5922C6047C00EFF39D /* ReplayKit.framework in Frameworks */,
-				04F7C3CC2398A64C00C28A3F /* VCRTC.framework in Frameworks */,
-				04F7C3CA2398A64C00C28A3F /* VCRTCScreenShare.framework in Frameworks */,
-				04F7C3CE2398A64C00C28A3F /* WebRTC.framework in Frameworks */,
+				04F7C3DC2398F09100C28A3F /* VCRTC.framework in Frameworks */,
+				04F7C3DA2398F09100C28A3F /* VCRTCScreenShare.framework in Frameworks */,
+				04F7C3DE2398F09100C28A3F /* WebRTC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,7 +369,7 @@
 		0406BFA722D58D09002E0278 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
-				04F7C3C32398A64C00C28A3F /* libs */,
+				04F7C3D32398F09000C28A3F /* libs */,
 				04C908CE22D8608700B4BEEC /* PDFToJPG */,
 				0406BFF722D59AA3002E0278 /* SDWebImage */,
 				0406BFDD22D59A0E002E0278 /* Helper */,
@@ -655,28 +655,29 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		04F7C3C32398A64C00C28A3F /* libs */ = {
+		04F7C3D32398F09000C28A3F /* libs */ = {
 			isa = PBXGroup;
 			children = (
-				04F7C3C42398A64C00C28A3F /* vc-share-record */,
-				04F7C3C62398A64C00C28A3F /* vc-video-sdk */,
+				04F7C3D42398F09100C28A3F /* vc-share-record */,
+				04F7C3D62398F09100C28A3F /* vc-video-sdk */,
 			);
-			path = libs;
+			name = libs;
+			path = ../../../../libs;
 			sourceTree = "<group>";
 		};
-		04F7C3C42398A64C00C28A3F /* vc-share-record */ = {
+		04F7C3D42398F09100C28A3F /* vc-share-record */ = {
 			isa = PBXGroup;
 			children = (
-				04F7C3C52398A64C00C28A3F /* VCRTCScreenShare.framework */,
+				04F7C3D52398F09100C28A3F /* VCRTCScreenShare.framework */,
 			);
 			path = "vc-share-record";
 			sourceTree = "<group>";
 		};
-		04F7C3C62398A64C00C28A3F /* vc-video-sdk */ = {
+		04F7C3D62398F09100C28A3F /* vc-video-sdk */ = {
 			isa = PBXGroup;
 			children = (
-				04F7C3C72398A64C00C28A3F /* VCRTC.framework */,
-				04F7C3C82398A64C00C28A3F /* WebRTC.framework */,
+				04F7C3D72398F09100C28A3F /* VCRTC.framework */,
+				04F7C3D82398F09100C28A3F /* WebRTC.framework */,
 			);
 			path = "vc-video-sdk";
 			sourceTree = "<group>";
