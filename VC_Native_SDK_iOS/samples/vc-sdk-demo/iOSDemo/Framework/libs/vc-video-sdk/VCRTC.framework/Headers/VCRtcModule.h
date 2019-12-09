@@ -68,7 +68,7 @@ typedef void(^failureBlock)(NSError * error);
 - (void)VCRtc:(VCRtcModule *)module didUpdateParticipant:(Participant *)participant;
 
 /**
- 参会者离开会议
+ 其他参会者离开会议，不包括本端退出会议，本端退出并不会触发本方法。
 
  @param module VCRtcModule 的示例对象
  @param participant 离开后的参会者
@@ -240,7 +240,7 @@ typedef void(^failureBlock)(NSError * error);
 - (void)VCRtc:(VCRtcModule *)module refuseAnswerCall: (NSDictionary *)data;
 
 /**
- 加入会议失败
+ 加入会议失败、被平台断开退出会议、本端异常导致退出会议
  
  @param module VCRtcModule 的示例对象
  @param reason 失败原因

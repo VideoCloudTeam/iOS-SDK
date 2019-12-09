@@ -335,7 +335,6 @@
 		04E8CAEC22D46D6C00D84E26 /* ConferenceVCCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConferenceVCCell.h; sourceTree = "<group>"; };
 		04E8CAED22D46D6C00D84E26 /* ConferenceVCCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConferenceVCCell.m; sourceTree = "<group>"; };
 		04E8CAEE22D46D6D00D84E26 /* ConferenceHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConferenceHeaderView.m; sourceTree = "<group>"; };
-		1C03852A239E3ADD00C1CC2E /* VCRTC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VCRTC.framework; path = "iOSDemo/Framework/vc-video-sdk/VCRTC.framework"; sourceTree = "<group>"; };
 		1C038535239E3BAD00C1CC2E /* VCRTCScreenShare.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = VCRTCScreenShare.framework; sourceTree = "<group>"; };
 		1C038537239E3BAD00C1CC2E /* VCRTC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = VCRTC.framework; sourceTree = "<group>"; };
 		1C038538239E3BAD00C1CC2E /* WebRTC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WebRTC.framework; sourceTree = "<group>"; };
@@ -579,7 +578,6 @@
 		0455AB0722C35E8300EFF39D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1C03852A239E3ADD00C1CC2E /* VCRTC.framework */,
 				0455AB1A22C5C83800EFF39D /* ReplayKit.framework */,
 				0455AB3A22C5E93600EFF39D /* UIKit.framework */,
 			);
