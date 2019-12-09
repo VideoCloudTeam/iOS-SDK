@@ -58,9 +58,11 @@
 
 + (instancetype)loadSmallViewWithVideoView: (VCVideoView *)videoView isTurnOffTheCamera: (BOOL)isTurnOffTheCamera withParticipant: (Participant *)participant isBig: (BOOL) isBig uuid: (NSString *)uuid {
     SmallView *smallView = [SmallView smallView];
+    smallView.stateImg.userInteractionEnabled = YES;
     [smallView insertSubview:videoView atIndex:1];
     [smallView bringSubviewToFront:smallView.nameLab];
-    videoView.objectFit =  !videoView.isPresentation ? VCVideoViewObjectFitCover : VCVideoViewObjectFitContain ;
+    videoView.objectFit =  !videoView.isPresentation ? VCVideoViewObjectFitCover : VCVideoViewObjectFitContain;
+    videoView.userInteractionEnabled = YES;
     smallView.videoView = videoView;
     if (isTurnOffTheCamera) {
         smallView.stateImg.image = [UIImage imageNamed:@"background-close-video"];
@@ -84,6 +86,7 @@
 
     smallView.isBig = isBig;
     smallView.uuid = uuid;
+
     return smallView;
 }
 

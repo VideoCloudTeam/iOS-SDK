@@ -59,6 +59,7 @@
 		0406C04922D5B4AF002E0278 /* UIImage+tag.m in Sources */ = {isa = PBXBuildFile; fileRef = 0406C04822D5B4AF002E0278 /* UIImage+tag.m */; };
 		0406C04C22D5B563002E0278 /* VCCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0406C04B22D5B562002E0278 /* VCCollectionViewFlowLayout.m */; };
 		0406C04F22D5BF8F002E0278 /* ShareModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0406C04E22D5BF8F002E0278 /* ShareModel.m */; };
+		0406C05322D5F523002E0278 /* ScreenShare.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0455AB2D22C5E93600EFF39D /* ScreenShare.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		0455AACD22C35CE800EFF39D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0455AACC22C35CE800EFF39D /* AppDelegate.m */; };
 		0455AAD022C35CE800EFF39D /* ExampleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0455AACF22C35CE800EFF39D /* ExampleVC.m */; };
 		0455AAD322C35CE800EFF39D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0455AAD122C35CE800EFF39D /* Main.storyboard */; };
@@ -94,18 +95,24 @@
 		04E8CAE122D4363900D84E26 /* VideoViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8CAE022D4363900D84E26 /* VideoViewModel.m */; };
 		04E8CAEF22D46D6D00D84E26 /* ConferenceVCCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8CAED22D46D6C00D84E26 /* ConferenceVCCell.m */; };
 		04E8CAF022D46D6D00D84E26 /* ConferenceHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8CAEE22D46D6D00D84E26 /* ConferenceHeaderView.m */; };
-		1C5F7493239792D80013297E /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C5F7491239792D80013297E /* LoginViewController.m */; };
-		1C5F7494239792D80013297E /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C5F7492239792D80013297E /* LoginViewController.xib */; };
-		1CBB594022F1471F00057A28 /* VCRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CBB593922F141F300057A28 /* VCRTC.framework */; };
-		1CBB594122F1471F00057A28 /* VCRTC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1CBB593922F141F300057A28 /* VCRTC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1CBB594222F1471F00057A28 /* WebRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CBB593A22F141F300057A28 /* WebRTC.framework */; };
-		1CBB594322F1471F00057A28 /* WebRTC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1CBB593A22F141F300057A28 /* WebRTC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1CBB594422F16B7F00057A28 /* VCRTCScreenShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CBB593D22F1427400057A28 /* VCRTCScreenShare.framework */; };
-		1CBB594522F16BB200057A28 /* VCRTCScreenShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CBB593D22F1427400057A28 /* VCRTCScreenShare.framework */; };
-		1CBB594622F16BB200057A28 /* VCRTCScreenShare.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1CBB593D22F1427400057A28 /* VCRTCScreenShare.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1C03853F239E3C5900C1CC2E /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C03853C239E3C5900C1CC2E /* LoginViewController.xib */; };
+		1C038540239E3C5900C1CC2E /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C03853E239E3C5900C1CC2E /* LoginViewController.m */; };
+		1C038541239E3C8B00C1CC2E /* VCRTCScreenShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C038535239E3BAD00C1CC2E /* VCRTCScreenShare.framework */; };
+		1C038542239E3C8B00C1CC2E /* VCRTCScreenShare.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1C038535239E3BAD00C1CC2E /* VCRTCScreenShare.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1C038544239E3CCE00C1CC2E /* VCRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C038537239E3BAD00C1CC2E /* VCRTC.framework */; };
+		1C038545239E3CCE00C1CC2E /* VCRTC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1C038537239E3BAD00C1CC2E /* VCRTC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1C038546239E3CCE00C1CC2E /* WebRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C038538239E3BAD00C1CC2E /* WebRTC.framework */; };
+		1C038547239E3CCE00C1CC2E /* WebRTC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1C038538239E3BAD00C1CC2E /* WebRTC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		0406C05422D5F523002E0278 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0455AAC022C35CE800EFF39D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0455AB2C22C5E93600EFF39D;
+			remoteInfo = ScreenShare;
+		};
 		0455AAE122C35CEC00EFF39D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0455AAC022C35CE800EFF39D /* Project object */;
@@ -123,15 +130,36 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		0406BFF222D59A79002E0278 /* Embed Frameworks */ = {
+		0406C05622D5F524002E0278 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				0406C05322D5F523002E0278 /* ScreenShare.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1C038532239E3B0000C1CC2E /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				1CBB594122F1471F00057A28 /* VCRTC.framework in Embed Frameworks */,
-				1CBB594622F16BB200057A28 /* VCRTCScreenShare.framework in Embed Frameworks */,
-				1CBB594322F1471F00057A28 /* WebRTC.framework in Embed Frameworks */,
+				1C038545239E3CCE00C1CC2E /* VCRTC.framework in Embed Frameworks */,
+				1C038547239E3CCE00C1CC2E /* WebRTC.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1C038543239E3C8B00C1CC2E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1C038542239E3C8B00C1CC2E /* VCRTCScreenShare.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -307,12 +335,13 @@
 		04E8CAEC22D46D6C00D84E26 /* ConferenceVCCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConferenceVCCell.h; sourceTree = "<group>"; };
 		04E8CAED22D46D6C00D84E26 /* ConferenceVCCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConferenceVCCell.m; sourceTree = "<group>"; };
 		04E8CAEE22D46D6D00D84E26 /* ConferenceHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConferenceHeaderView.m; sourceTree = "<group>"; };
-		1C5F7490239792D80013297E /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
-		1C5F7491239792D80013297E /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		1C5F7492239792D80013297E /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
-		1CBB593922F141F300057A28 /* VCRTC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = VCRTC.framework; sourceTree = "<group>"; };
-		1CBB593A22F141F300057A28 /* WebRTC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WebRTC.framework; sourceTree = "<group>"; };
-		1CBB593D22F1427400057A28 /* VCRTCScreenShare.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = VCRTCScreenShare.framework; sourceTree = "<group>"; };
+		1C03852A239E3ADD00C1CC2E /* VCRTC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VCRTC.framework; path = "iOSDemo/Framework/vc-video-sdk/VCRTC.framework"; sourceTree = "<group>"; };
+		1C038535239E3BAD00C1CC2E /* VCRTCScreenShare.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = VCRTCScreenShare.framework; sourceTree = "<group>"; };
+		1C038537239E3BAD00C1CC2E /* VCRTC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = VCRTC.framework; sourceTree = "<group>"; };
+		1C038538239E3BAD00C1CC2E /* WebRTC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WebRTC.framework; sourceTree = "<group>"; };
+		1C03853C239E3C5900C1CC2E /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		1C03853D239E3C5900C1CC2E /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		1C03853E239E3C5900C1CC2E /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -320,9 +349,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1CBB594022F1471F00057A28 /* VCRTC.framework in Frameworks */,
-				1CBB594522F16BB200057A28 /* VCRTCScreenShare.framework in Frameworks */,
-				1CBB594222F1471F00057A28 /* WebRTC.framework in Frameworks */,
+				1C038544239E3CCE00C1CC2E /* VCRTC.framework in Frameworks */,
+				1C038546239E3CCE00C1CC2E /* WebRTC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,8 +372,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1CBB594422F16B7F00057A28 /* VCRTCScreenShare.framework in Frameworks */,
 				0455AB5922C6047C00EFF39D /* ReplayKit.framework in Frameworks */,
+				1C038541239E3C8B00C1CC2E /* VCRTCScreenShare.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,10 +383,10 @@
 		0406BFA722D58D09002E0278 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
+				1C038533239E3BAD00C1CC2E /* libs */,
 				04C908CE22D8608700B4BEEC /* PDFToJPG */,
 				0406BFF722D59AA3002E0278 /* SDWebImage */,
 				0406BFDD22D59A0E002E0278 /* Helper */,
-				0455AAFD22C35D0400EFF39D /* vc-video-sdk */,
 				0406BFA822D58D45002E0278 /* TZImagePickerController */,
 			);
 			path = Framework;
@@ -367,11 +395,11 @@
 		0406BFA822D58D45002E0278 /* TZImagePickerController */ = {
 			isa = PBXGroup;
 			children = (
-				0406BFAD22D58D45002E0278 /* TZAssetCell.m */,
 				0406BFA922D58D45002E0278 /* TZPhotoPreviewCell.h */,
 				0406BFAA22D58D45002E0278 /* TZPhotoPickerController.h */,
 				0406BFAB22D58D45002E0278 /* TZImageCropManager.m */,
 				0406BFAC22D58D45002E0278 /* TZImageManager.h */,
+				0406BFAD22D58D45002E0278 /* TZAssetCell.m */,
 				0406BFAE22D58D45002E0278 /* TZVideoPlayerController.m */,
 				0406BFAF22D58D45002E0278 /* TZAssetModel.m */,
 				0406BFB022D58D45002E0278 /* NSBundle+TZImagePicker.m */,
@@ -405,22 +433,22 @@
 		0406BFDD22D59A0E002E0278 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				0406C04722D5B4AF002E0278 /* UIImage+tag.h */,
-				0406C04822D5B4AF002E0278 /* UIImage+tag.m */,
-				0406BFDF22D59A0E002E0278 /* UIView+YCExtension.h */,
-				0406BFE422D59A0E002E0278 /* UIView+YCExtension.m */,
 				0406C04A22D5B562002E0278 /* VCCollectionViewFlowLayout.h */,
 				0406C04B22D5B562002E0278 /* VCCollectionViewFlowLayout.m */,
+				0406C04722D5B4AF002E0278 /* UIImage+tag.h */,
+				0406C04822D5B4AF002E0278 /* UIImage+tag.m */,
 				0406BFDE22D59A0E002E0278 /* YCCycleProgressView.h */,
-				0406BFE522D59A0E002E0278 /* YCCycleProgressView.m */,
-				0406BFE922D59A0E002E0278 /* YCPhotoBrowserAnimator.h */,
+				0406BFDF22D59A0E002E0278 /* UIView+YCExtension.h */,
+				0406BFE022D59A0E002E0278 /* YCPhotoBrowserCellHelper.h */,
 				0406BFE122D59A0E002E0278 /* YCPhotoBrowserAnimator.m */,
 				0406BFE222D59A0E002E0278 /* YCPhotoBrowserCell.h */,
-				0406BFE822D59A0E002E0278 /* YCPhotoBrowserCell.m */,
-				0406BFE022D59A0E002E0278 /* YCPhotoBrowserCellHelper.h */,
-				0406BFE622D59A0E002E0278 /* YCPhotoBrowserCellHelper.m */,
 				0406BFE322D59A0E002E0278 /* YCPhotoBrowserConst.h */,
+				0406BFE422D59A0E002E0278 /* UIView+YCExtension.m */,
+				0406BFE522D59A0E002E0278 /* YCCycleProgressView.m */,
+				0406BFE622D59A0E002E0278 /* YCPhotoBrowserCellHelper.m */,
 				0406BFE722D59A0E002E0278 /* YCPhotoBrowserConst.m */,
+				0406BFE822D59A0E002E0278 /* YCPhotoBrowserCell.m */,
+				0406BFE922D59A0E002E0278 /* YCPhotoBrowserAnimator.h */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -429,58 +457,58 @@
 			isa = PBXGroup;
 			children = (
 				0406BFF822D59AA3002E0278 /* SDAnimatedImageRep.h */,
-				0406C01422D59AA3002E0278 /* SDAnimatedImageRep.m */,
-				0406C00322D59AA3002E0278 /* SDImageCache.h */,
-				0406C01522D59AA3002E0278 /* SDImageCache.m */,
-				0406C00522D59AA3002E0278 /* SDImageCacheConfig.h */,
-				0406C02122D59AA3002E0278 /* SDImageCacheConfig.m */,
-				0406C01622D59AA3002E0278 /* SDWebImageFrame.h */,
-				0406C00222D59AA3002E0278 /* SDWebImageFrame.m */,
-				0406BFFF22D59AA3002E0278 /* SDWebImageManager.m */,
-				0406C01A22D59AA3002E0278 /* SDWebImageManager.h */,
-				0406C00022D59AA3002E0278 /* SDWebImageDownloaderOperation.h */,
-				0406C01822D59AA3002E0278 /* SDWebImageDownloaderOperation.m */,
+				0406BFF922D59AA3002E0278 /* NSButton+WebCache.h */,
 				0406BFFA22D59AA3002E0278 /* SDWebImageCoder.h */,
-				0406C01222D59AA3002E0278 /* SDWebImageCoder.m */,
-				0406C02222D59AA3002E0278 /* SDWebImageCodersManager.h */,
+				0406BFFB22D59AA3002E0278 /* NSImage+WebCache.h */,
+				0406BFFC22D59AA3002E0278 /* UIImageView+WebCache.h */,
+				0406BFFD22D59AA3002E0278 /* NSData+ImageContentType.h */,
+				0406BFFE22D59AA3002E0278 /* SDWebImageTransition.h */,
+				0406BFFF22D59AA3002E0278 /* SDWebImageManager.m */,
+				0406C00022D59AA3002E0278 /* SDWebImageDownloaderOperation.h */,
+				0406C00122D59AA3002E0278 /* UIImageView+HighlightedWebCache.m */,
+				0406C00222D59AA3002E0278 /* SDWebImageFrame.m */,
+				0406C00322D59AA3002E0278 /* SDImageCache.h */,
+				0406C00422D59AA3002E0278 /* UIImage+ForceDecode.m */,
+				0406C00522D59AA3002E0278 /* SDImageCacheConfig.h */,
 				0406C00622D59AA3002E0278 /* SDWebImageCodersManager.m */,
-				0406C02922D59AA3002E0278 /* SDWebImageCoderHelper.h */,
-				0406C00C22D59AA3002E0278 /* SDWebImageCoderHelper.m */,
-				0406C02822D59AA3002E0278 /* SDWebImageCompat.h */,
-				0406C00D22D59AA3002E0278 /* SDWebImageCompat.m */,
-				0406C02022D59AA3002E0278 /* SDWebImageDownloader.h */,
 				0406C00722D59AA3002E0278 /* SDWebImageDownloader.m */,
 				0406C00822D59AA3002E0278 /* SDWebImageGIFCoder.h */,
-				0406C01F22D59AA3002E0278 /* SDWebImageGIFCoder.m */,
-				0406C00E22D59AA3002E0278 /* SDWebImageImageIOCoder.h */,
-				0406C02722D59AA3002E0278 /* SDWebImageImageIOCoder.m */,
-				0406C02622D59AA3002E0278 /* SDWebImagePrefetcher.h */,
-				0406C00F22D59AA3002E0278 /* SDWebImagePrefetcher.m */,
-				0406C01D22D59AA3002E0278 /* SDWebImageOperation.h */,
-				0406BFFE22D59AA3002E0278 /* SDWebImageTransition.h */,
-				0406C01922D59AA3002E0278 /* SDWebImageTransition.m */,
-				0406BFF922D59AA3002E0278 /* NSButton+WebCache.h */,
-				0406C01322D59AA3002E0278 /* NSButton+WebCache.m */,
-				0406BFFD22D59AA3002E0278 /* NSData+ImageContentType.h */,
-				0406C01B22D59AA3002E0278 /* NSData+ImageContentType.m */,
-				0406BFFB22D59AA3002E0278 /* NSImage+WebCache.h */,
-				0406C01E22D59AA3002E0278 /* NSImage+WebCache.m */,
-				0406C00A22D59AA3002E0278 /* UIButton+WebCache.h */,
-				0406C02B22D59AA3002E0278 /* UIButton+WebCache.m */,
-				0406C02322D59AA3002E0278 /* UIImage+ForceDecode.h */,
-				0406C00422D59AA3002E0278 /* UIImage+ForceDecode.m */,
-				0406C02C22D59AA3002E0278 /* UIImage+GIF.h */,
 				0406C00922D59AA3002E0278 /* UIImage+GIF.m */,
-				0406C02A22D59AA3002E0278 /* UIImage+MultiFormat.h */,
+				0406C00A22D59AA3002E0278 /* UIButton+WebCache.h */,
 				0406C00B22D59AA3002E0278 /* UIImage+MultiFormat.m */,
-				0406C01722D59AA3002E0278 /* UIImageView+HighlightedWebCache.h */,
-				0406C00122D59AA3002E0278 /* UIImageView+HighlightedWebCache.m */,
-				0406BFFC22D59AA3002E0278 /* UIImageView+WebCache.h */,
-				0406C01C22D59AA3002E0278 /* UIImageView+WebCache.m */,
+				0406C00C22D59AA3002E0278 /* SDWebImageCoderHelper.m */,
+				0406C00D22D59AA3002E0278 /* SDWebImageCompat.m */,
+				0406C00E22D59AA3002E0278 /* SDWebImageImageIOCoder.h */,
+				0406C00F22D59AA3002E0278 /* SDWebImagePrefetcher.m */,
 				0406C01022D59AA3002E0278 /* UIView+WebCache.h */,
-				0406C02522D59AA3002E0278 /* UIView+WebCache.m */,
 				0406C01122D59AA3002E0278 /* UIView+WebCacheOperation.h */,
+				0406C01222D59AA3002E0278 /* SDWebImageCoder.m */,
+				0406C01322D59AA3002E0278 /* NSButton+WebCache.m */,
+				0406C01422D59AA3002E0278 /* SDAnimatedImageRep.m */,
+				0406C01522D59AA3002E0278 /* SDImageCache.m */,
+				0406C01622D59AA3002E0278 /* SDWebImageFrame.h */,
+				0406C01722D59AA3002E0278 /* UIImageView+HighlightedWebCache.h */,
+				0406C01822D59AA3002E0278 /* SDWebImageDownloaderOperation.m */,
+				0406C01922D59AA3002E0278 /* SDWebImageTransition.m */,
+				0406C01A22D59AA3002E0278 /* SDWebImageManager.h */,
+				0406C01B22D59AA3002E0278 /* NSData+ImageContentType.m */,
+				0406C01C22D59AA3002E0278 /* UIImageView+WebCache.m */,
+				0406C01D22D59AA3002E0278 /* SDWebImageOperation.h */,
+				0406C01E22D59AA3002E0278 /* NSImage+WebCache.m */,
+				0406C01F22D59AA3002E0278 /* SDWebImageGIFCoder.m */,
+				0406C02022D59AA3002E0278 /* SDWebImageDownloader.h */,
+				0406C02122D59AA3002E0278 /* SDImageCacheConfig.m */,
+				0406C02222D59AA3002E0278 /* SDWebImageCodersManager.h */,
+				0406C02322D59AA3002E0278 /* UIImage+ForceDecode.h */,
 				0406C02422D59AA3002E0278 /* UIView+WebCacheOperation.m */,
+				0406C02522D59AA3002E0278 /* UIView+WebCache.m */,
+				0406C02622D59AA3002E0278 /* SDWebImagePrefetcher.h */,
+				0406C02722D59AA3002E0278 /* SDWebImageImageIOCoder.m */,
+				0406C02822D59AA3002E0278 /* SDWebImageCompat.h */,
+				0406C02922D59AA3002E0278 /* SDWebImageCoderHelper.h */,
+				0406C02A22D59AA3002E0278 /* UIImage+MultiFormat.h */,
+				0406C02B22D59AA3002E0278 /* UIButton+WebCache.m */,
+				0406C02C22D59AA3002E0278 /* UIImage+GIF.h */,
 			);
 			path = SDWebImage;
 			sourceTree = "<group>";
@@ -548,19 +576,10 @@
 			path = iOSDemoUITests;
 			sourceTree = "<group>";
 		};
-		0455AAFD22C35D0400EFF39D /* vc-video-sdk */ = {
-			isa = PBXGroup;
-			children = (
-				1CBB593D22F1427400057A28 /* VCRTCScreenShare.framework */,
-				1CBB593922F141F300057A28 /* VCRTC.framework */,
-				1CBB593A22F141F300057A28 /* WebRTC.framework */,
-			);
-			path = "vc-video-sdk";
-			sourceTree = "<group>";
-		};
 		0455AB0722C35E8300EFF39D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1C03852A239E3ADD00C1CC2E /* VCRTC.framework */,
 				0455AB1A22C5C83800EFF39D /* ReplayKit.framework */,
 				0455AB3A22C5E93600EFF39D /* UIKit.framework */,
 			);
@@ -581,20 +600,20 @@
 		04C908CE22D8608700B4BEEC /* PDFToJPG */ = {
 			isa = PBXGroup;
 			children = (
-				04C908D622D8608700B4BEEC /* PDFToJPGManager.h */,
-				04C908D022D8608700B4BEEC /* PDFToJPGManager.m */,
-				04C908D722D8608700B4BEEC /* PDFView.h */,
 				04C908CF22D8608700B4BEEC /* PDFView.m */,
-				04C908D822D8608700B4BEEC /* NSData+MD5.h */,
-				04C908D322D8608700B4BEEC /* NSData+MD5.m */,
-				04C908DA22D8608700B4BEEC /* NSDate+Utilities.h */,
-				04C908D222D8608700B4BEEC /* NSDate+Utilities.m */,
-				04C908D422D8608700B4BEEC /* NSString+MD5.h */,
-				04C908D922D8608700B4BEEC /* NSString+MD5.m */,
-				04C908D522D8608700B4BEEC /* UIView+Image.h */,
-				04C908DC22D8608700B4BEEC /* UIView+Image.m */,
+				04C908D022D8608700B4BEEC /* PDFToJPGManager.m */,
 				04C908D122D8608700B4BEEC /* UIImage+PDF.h */,
+				04C908D222D8608700B4BEEC /* NSDate+Utilities.m */,
+				04C908D322D8608700B4BEEC /* NSData+MD5.m */,
+				04C908D422D8608700B4BEEC /* NSString+MD5.h */,
+				04C908D522D8608700B4BEEC /* UIView+Image.h */,
+				04C908D622D8608700B4BEEC /* PDFToJPGManager.h */,
+				04C908D722D8608700B4BEEC /* PDFView.h */,
+				04C908D822D8608700B4BEEC /* NSData+MD5.h */,
+				04C908D922D8608700B4BEEC /* NSString+MD5.m */,
+				04C908DA22D8608700B4BEEC /* NSDate+Utilities.h */,
 				04C908DB22D8608700B4BEEC /* UIImage+PDF.m */,
+				04C908DC22D8608700B4BEEC /* UIView+Image.m */,
 			);
 			path = PDFToJPG;
 			sourceTree = "<group>";
@@ -614,9 +633,9 @@
 				04E8CAC422D324BE00D84E26 /* ViewController.h */,
 				04E8CAC522D324BE00D84E26 /* ViewController.m */,
 				04E8CAC722D324F200D84E26 /* ViewController.xib */,
-				1C5F7490239792D80013297E /* LoginViewController.h */,
-				1C5F7491239792D80013297E /* LoginViewController.m */,
-				1C5F7492239792D80013297E /* LoginViewController.xib */,
+				1C03853D239E3C5900C1CC2E /* LoginViewController.h */,
+				1C03853E239E3C5900C1CC2E /* LoginViewController.m */,
+				1C03853C239E3C5900C1CC2E /* LoginViewController.xib */,
 			);
 			name = VC;
 			path = iOSDemo/VC;
@@ -654,6 +673,32 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		1C038533239E3BAD00C1CC2E /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				1C038534239E3BAD00C1CC2E /* vc-share-record */,
+				1C038536239E3BAD00C1CC2E /* vc-video-sdk */,
+			);
+			path = libs;
+			sourceTree = "<group>";
+		};
+		1C038534239E3BAD00C1CC2E /* vc-share-record */ = {
+			isa = PBXGroup;
+			children = (
+				1C038535239E3BAD00C1CC2E /* VCRTCScreenShare.framework */,
+			);
+			path = "vc-share-record";
+			sourceTree = "<group>";
+		};
+		1C038536239E3BAD00C1CC2E /* vc-video-sdk */ = {
+			isa = PBXGroup;
+			children = (
+				1C038537239E3BAD00C1CC2E /* VCRTC.framework */,
+				1C038538239E3BAD00C1CC2E /* WebRTC.framework */,
+			);
+			path = "vc-video-sdk";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -664,11 +709,13 @@
 				0455AAC422C35CE800EFF39D /* Sources */,
 				0455AAC522C35CE800EFF39D /* Frameworks */,
 				0455AAC622C35CE800EFF39D /* Resources */,
-				0406BFF222D59A79002E0278 /* Embed Frameworks */,
+				0406C05622D5F524002E0278 /* Embed App Extensions */,
+				1C038532239E3B0000C1CC2E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				0406C05522D5F523002E0278 /* PBXTargetDependency */,
 			);
 			name = iOSDemo;
 			productName = iOSDemo;
@@ -718,6 +765,7 @@
 				0455AB2922C5E93600EFF39D /* Sources */,
 				0455AB2A22C5E93600EFF39D /* Frameworks */,
 				0455AB2B22C5E93600EFF39D /* Resources */,
+				1C038543239E3C8B00C1CC2E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -792,7 +840,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C5F7494239792D80013297E /* LoginViewController.xib in Resources */,
+				1C03853F239E3C5900C1CC2E /* LoginViewController.xib in Resources */,
 				04E8CAC822D324F200D84E26 /* ViewController.xib in Resources */,
 				0455AAD822C35CEC00EFF39D /* LaunchScreen.storyboard in Resources */,
 				04C908C422D83D1700B4BEEC /* 02StartRecord.mov in Resources */,
@@ -866,7 +914,7 @@
 				0455AACD22C35CE800EFF39D /* AppDelegate.m in Sources */,
 				04C908DF22D8608700B4BEEC /* NSDate+Utilities.m in Sources */,
 				04C908E222D8608700B4BEEC /* UIImage+PDF.m in Sources */,
-				1C5F7493239792D80013297E /* LoginViewController.m in Sources */,
+				1C038540239E3C5900C1CC2E /* LoginViewController.m in Sources */,
 				0406C04622D59AA3002E0278 /* UIButton+WebCache.m in Sources */,
 				0406C03622D59AA3002E0278 /* SDWebImageCompat.m in Sources */,
 				0406BFDC22D5998E002E0278 /* VCPresentionView.m in Sources */,
@@ -938,6 +986,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		0406C05522D5F523002E0278 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0455AB2C22C5E93600EFF39D /* ScreenShare */;
+			targetProxy = 0406C05422D5F523002E0278 /* PBXContainerItemProxy */;
+		};
 		0455AAE222C35CEC00EFF39D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 0455AAC722C35CE800EFF39D /* iOSDemo */;
@@ -1092,15 +1145,17 @@
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/iOSDemo/vc-video-sdk",
+					"$(SRCROOT)/iOSDemo/vc-video-sdk",
+					"$(SRCROOT)/iOSDemo/Framework/vc-video-sdk",
+					"$(PROJECT_DIR)/iOSDemo/Framework/libs/vc-share-record",
+					"$(PROJECT_DIR)/iOSDemo/Framework/libs/vc-video-sdk",
 					"$(PROJECT_DIR)/iOSDemo/Framework/vc-video-sdk",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/iOSDemo/PrefixHeader.pch";
 				HEADER_SEARCH_PATHS = (
-					"$(PROJECT_DIR)/iOSDemo/Framework/vc-video-sdk/VCRTC.framework",
-					"$(PROJECT_DIR)/iOSDemo/Framework/vc-video-sdk/VCRTC.framework/Headers",
-					"$(PROJECT_DIR)/iOSDemo/Framework/vc-video-sdk/VCRTC.framework",
-					"$(PROJECT_DIR)/iOSDemo/Framework/vc-video-sdk/WebRTC.framework/Headers",
+					"$(PROJECT_DIR)/iOSDemo/Framework/libs/vc-video-sdk/VCRTC.framework",
+					"$(PROJECT_DIR)/iOSDemo/Framework/libs/vc-video-sdk/VCRTC.framework/Headers",
+					"$(PROJECT_DIR)/iOSDemo/Framework/libs/vc-video-sdk/WebRTC.framework/Headers",
 				);
 				INFOPLIST_FILE = iOSDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1128,15 +1183,17 @@
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/iOSDemo/vc-video-sdk",
+					"$(SRCROOT)/iOSDemo/vc-video-sdk",
+					"$(SRCROOT)/iOSDemo/Framework/vc-video-sdk",
+					"$(PROJECT_DIR)/iOSDemo/Framework/libs/vc-share-record",
+					"$(PROJECT_DIR)/iOSDemo/Framework/libs/vc-video-sdk",
 					"$(PROJECT_DIR)/iOSDemo/Framework/vc-video-sdk",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/iOSDemo/PrefixHeader.pch";
 				HEADER_SEARCH_PATHS = (
-					"$(PROJECT_DIR)/iOSDemo/Framework/vc-video-sdk/VCRTC.framework",
-					"$(PROJECT_DIR)/iOSDemo/Framework/vc-video-sdk/VCRTC.framework/Headers",
-					"$(PROJECT_DIR)/iOSDemo/Framework/vc-video-sdk/VCRTC.framework",
-					"$(PROJECT_DIR)/iOSDemo/Framework/vc-video-sdk/WebRTC.framework/Headers",
+					"$(PROJECT_DIR)/iOSDemo/Framework/libs/vc-video-sdk/VCRTC.framework",
+					"$(PROJECT_DIR)/iOSDemo/Framework/libs/vc-video-sdk/VCRTC.framework/Headers",
+					"$(PROJECT_DIR)/iOSDemo/Framework/libs/vc-video-sdk/WebRTC.framework/Headers",
 				);
 				INFOPLIST_FILE = iOSDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1233,12 +1290,14 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = ScreenShare/ScreenShare.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 82LZ3W2RXX;
+				DEVELOPMENT_TEAM = Z8SE9YCY23;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/iOSDemo/vc-video-sdk",
 					"$(PROJECT_DIR)/iOSDemo/Framework/vc-video-sdk",
+					"$(PROJECT_DIR)/iOSDemo/Framework/libs/vc-share-record",
+					"$(PROJECT_DIR)/iOSDemo/Framework/libs/vc-video-sdk",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/iOSDemo/PrefixHeader.pch";
 				HEADER_SEARCH_PATHS = (
@@ -1251,7 +1310,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.vcsdk-dem---";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vcsdk-demo.phone.record";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1263,12 +1322,14 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = ScreenShare/ScreenShare.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 82LZ3W2RXX;
+				DEVELOPMENT_TEAM = Z8SE9YCY23;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/iOSDemo/vc-video-sdk",
 					"$(PROJECT_DIR)/iOSDemo/Framework/vc-video-sdk",
+					"$(PROJECT_DIR)/iOSDemo/Framework/libs/vc-share-record",
+					"$(PROJECT_DIR)/iOSDemo/Framework/libs/vc-video-sdk",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/iOSDemo/PrefixHeader.pch";
 				HEADER_SEARCH_PATHS = (
@@ -1281,7 +1342,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.vcsdk-dem---";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vcsdk-demo.phone.record";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";

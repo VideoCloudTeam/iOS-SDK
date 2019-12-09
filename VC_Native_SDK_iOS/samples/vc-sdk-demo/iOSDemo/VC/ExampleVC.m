@@ -56,6 +56,10 @@
 @property (nonatomic, strong) NSTimer *recordTimer ;
 /**本地自己的音视频数据模型 */
 @property (nonatomic, strong) VideoViewModel *localViewModel;
+/** 指定上大屏幕的参会者ID */
+@property (nonatomic, copy) NSString *stickUUID;
+/** 是否关闭画中画 */
+@property (nonatomic, assign, getter=isClosePicterInPicter) BOOL closePicterInPicter;
 @end
 
 @implementation ExampleVC
@@ -190,7 +194,7 @@
         } else {
             
             [self.farEndViewsArray addObject:[[VideoViewModel alloc] initWithuuid:uuid videoView:view participant:self.vcrtc.rosterList[uuid]]];
-            }
+        }
         
     } else {
         //单流流处理方式
@@ -357,7 +361,7 @@
         self.screenRecordStateImg.hidden = NO;
         //分享按钮选中状态
         self.shareBtn.selected = YES;
-    
+        
     } else {
         //分享图自己本端分享的时候不做处理 或者是屏幕录制也不做处理
         if (([self.shareModel.shareType isEqualToString:@"local"] || [self.shareModel.shareType isEqualToString:@"localScreenShare"]) && self.shareModel.isSharing ) {
@@ -383,17 +387,17 @@
     if (self.isPrivateCloud) {
         //本端在分享图片的时候没结束不能屏幕共享
         if (self.shareModel.isSharing && [self.shareModel.shareType isEqualToString:@"local"] && [[userDefaults objectForKey:kScreenRecordState] isEqualToString:@"start"]) {
-                //更新状态 屏幕共享结束
-                [userDefaults setObject:@"stop" forKey:kScreenRecordState];
-                //分享按钮非选中状态
-                self.shareBtn.selected = NO;
-                //屏幕共享状态视图隐藏
-                self.screenRecordStateImg.hidden = YES;
-                //分享model数据为空
-                self.shareModel = nil;
-                [self.shareView removeFromSuperview];
+            //更新状态 屏幕共享结束
+            [userDefaults setObject:@"stop" forKey:kScreenRecordState];
+            //分享按钮非选中状态
+            self.shareBtn.selected = NO;
+            //屏幕共享状态视图隐藏
+            self.screenRecordStateImg.hidden = YES;
+            //分享model数据为空
+            self.shareModel = nil;
+            [self.shareView removeFromSuperview];
             //分享断开
-                [self.vcrtc shareToRemoteDisconnect];
+            [self.vcrtc shareToRemoteDisconnect];
             //更新屏幕显示的视频
             [self layoutFarEndView:self.vcrtc.layoutParticipants];
         } else if  (self.shareModel.isSharing && [self.shareModel.shareType isEqualToString:@"localScreenShare"] && ([[userDefaults objectForKey:kScreenRecordState] isEqualToString:@"start"] || [[userDefaults objectForKey:kScreenRecordState] isEqualToString:@"ongoing"])) {
@@ -402,7 +406,7 @@
             [userDefaults setObject:@"stop" forKey:kScreenRecordState];
             self.shareModel = nil;
             self.screenRecordStateImg.hidden = YES;
-             self.shareBtn.selected = NO;
+            self.shareBtn.selected = NO;
             [self layoutFarEndView:self.vcrtc.layoutParticipants];
         } else {
             //远端图片分享结束
@@ -424,7 +428,7 @@
             //更新屏幕显示的视频
             [self layoutFarEndView:self.vcrtc.layoutParticipants];
         }
-
+        
     } else {
         //本端屏幕共享结束
         if ([self.shareModel.shareType isEqualToString:@"localScreenShare"] && self.shareModel.isSharing && self.shareBtn.selected) {
@@ -452,7 +456,7 @@
                 [self layoutFarEndView:self.vcrtc.layoutParticipants] ;
             }
         }
-
+        
     }
     
 }
@@ -465,9 +469,13 @@
         [self clearAllView];
         //只有本地视图
         [self createBigView];
-        [self createSmallView];
+        if (!self.isClosePicterInPicter) {
+            [self createSmallView];
+        }
         
     } else {
+        //是否是指定自己在大屏幕
+        BOOL isStickLocal = [self.vcrtc.uuid isEqualToString:self.stickUUID];
         if (self.isPrivateCloud) {
             //是否人的共享图片或屏幕
             BOOL isPresentation = NO;
@@ -480,12 +488,22 @@
             NSMutableArray *participantsArray = [participants mutableCopy];
             if (!isPresentation) {
                 if (![participantsArray containsObject:self.vcrtc.uuid]) {
-                    if (participantsArray.count <= 1) {
-                        [participantsArray addObject:self.vcrtc.uuid];
+                    if (isStickLocal) {
+                        if (participantsArray.count <= 1) {
+                            [participantsArray addObject:self.vcrtc.uuid];
+                        } else {
+                            //把自己放在小视频的第一位
+                            [participantsArray insertObject:self.vcrtc.uuid atIndex:0];
+                        }
                     } else {
-                        //把自己放在小视频的第一位
-                        [participantsArray insertObject:self.vcrtc.uuid atIndex:1];
+                        if (participantsArray.count <= 1) {
+                            [participantsArray addObject:self.vcrtc.uuid];
+                        } else {
+                            //把自己放在小视频的第一位
+                            [participantsArray insertObject:self.vcrtc.uuid atIndex:1];
+                        }
                     }
+                    
                 }
             }
             NSMutableArray *tempArray = [NSMutableArray array];
@@ -493,7 +511,7 @@
                 for (VideoViewModel *viewModel in self.farEndViewsArray) {
                     if ([uuid isEqualToString:self.vcrtc.uuid]) {
                         if (![tempArray containsObject:self.localViewModel]) {
-                          [tempArray addObject:self.localViewModel];
+                            [tempArray addObject:self.localViewModel];
                         }
                     } else {
                         if ([uuid isEqualToString:viewModel.uuid]) {
@@ -504,7 +522,7 @@
                             }
                         }
                     }
-
+                    
                 }
             }
             self.farEndViewsArray = tempArray;
@@ -514,9 +532,11 @@
                 [self updatePresentSmallView];
             } else {
                 [self createBigView];
-                [self createSmallView];
+                if (!self.isClosePicterInPicter) {
+                    [self createSmallView];
+                }
             }
-
+            
             
         } else {
             //排序规则 根据是否有人发言 有发言放在大视频上面 根据participants返回的数据排序 我自己本地始终放在小视频第一个
@@ -534,14 +554,24 @@
             }
             
             for (VideoViewModel *model in self.farEndViewsArray) {
-                if ( [model.uuid isEqualToString:self.vcrtc.uuid]) {
+                if ([model.uuid isEqualToString:self.vcrtc.uuid]) {
+                    
                     //添加自己,并且把位置放在小视频的第一位
                     if (![tempArray containsObject:model]) {
-                        if (tempArray.count >= 2) {
-                            [tempArray insertObject:model atIndex:1];
+                        if (isStickLocal) {
+//                            if (tempArray.count >= 2) {
+                                [tempArray insertObject:model atIndex:0];
+//                            } else {
+//                                [tempArray addObject:model];
+//                            }
                         } else {
-                            [tempArray addObject:model];
+                            if (tempArray.count >= 2) {
+                                [tempArray insertObject:model atIndex:1];
+                            } else {
+                                [tempArray addObject:model];
+                            }
                         }
+                        
                     }
                 }
             }
@@ -552,7 +582,9 @@
                 [self updatePresentSmallView];
             } else {
                 [self createBigView];
-                [self createSmallView];
+                if (!self.isClosePicterInPicter) {
+                    [self createSmallView];
+                }
             }
         }
     }
@@ -574,6 +606,39 @@
     SmallView *bigView = [SmallView loadSmallViewWithVideoView:videoViewModel.videoView isTurnOffTheCamera:NO withParticipant:videoViewModel.participant isBig:YES uuid:videoViewModel.uuid];
     bigView.frame = self.othersView.bounds;
     [self.othersView addSubview:bigView];
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame = bigView.bounds;
+    [bigView addSubview:button];
+
+//    [button addGestureRecognizer:tapGesuture];
+    [button addTarget:self action:@selector(clickAction:) forControlEvents:UIControlEventTouchUpInside];
+    [button addTarget:self action:@selector(cancelLockScreenAction:) forControlEvents:UIControlEventTouchDownRepeat];
+    button.tag = 500;
+    UIView *lockView = [[UIView alloc]initWithFrame:CGRectMake(10, 65,115, 40)];
+    lockView.backgroundColor =  [UIColor colorWithRed:0 green:0 blue:0 alpha:0.6];
+    lockView.hidden = !(self.stickUUID.length>0);
+    [lockView.layer setMasksToBounds:YES];
+    [lockView.layer setCornerRadius:3];
+    
+    UILabel *lable = [[UILabel alloc]initWithFrame:CGRectMake(5, 0, 60, 15)];
+    lable.text = @"主屏已锁定";
+    lable.textColor = [UIColor whiteColor];
+    lable.center = CGPointMake(lable.center.x,lockView.frame.size.height/2.0 );
+    lable.font = [UIFont systemFontOfSize:11];
+    [lockView addSubview:lable];
+    
+    UIButton *lockBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    lockBtn.frame = CGRectMake(lockView.frame.size.width - 47, 0, 40, 20);
+    [lockBtn setTitle:@"解锁" forState:UIControlStateNormal];
+    lockBtn.titleLabel.font = [UIFont systemFontOfSize:11];
+    lockBtn.center = CGPointMake(lockBtn.center.x,lockView.frame.size.height/2.0 );
+    lockBtn.backgroundColor = [UIColor colorWithRed:14/255.0 green:140/255.0 blue:238/255.0 alpha:1];
+    [lockBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [lockBtn.layer setMasksToBounds:YES];
+    [lockBtn.layer setCornerRadius:3];
+    [lockBtn addTarget:self action:@selector(cancelLockScreenAction:) forControlEvents:UIControlEventTouchUpInside];
+    [lockView addSubview:lockBtn];
+    [bigView addSubview:lockView];
     
 }
 
@@ -589,11 +654,81 @@
         SmallView *smallView = [SmallView loadSmallViewWithVideoView:videoViewModel.videoView isTurnOffTheCamera:NO withParticipant:videoViewModel.participant isBig:NO uuid:videoViewModel.uuid];
         [self.othersView addSubview:smallView];
         smallView.frame = CGRectMake((i - 1) * viewWidth + 10, self.othersView.frame.size.height - viewHeight, viewWidth, viewHeight);
+        /*
+         双击锁定主屏：指定某个参会人在大屏上
+         */
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+        button.frame = smallView.bounds;
+        [smallView addSubview:button];
+        [button addTarget:self action:@selector(lockScreenAction:) forControlEvents:UIControlEventTouchDownRepeat];
+        button.tag = i + 500;
+        
     }
 }
 
 
+
 #pragma mark - 按钮点击方法
+
+- (IBAction)moreAction:(UIButton *)sender {
+     UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    UIAlertAction *pictureAction = [UIAlertAction actionWithTitle:!self.isClosePicterInPicter ? @"关闭画中画":@"打开画中画" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        self.closePicterInPicter = !self.isClosePicterInPicter;
+        [self layoutFarEndView:self.vcrtc.layoutParticipants];
+           }];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    [alert addAction:pictureAction];
+    [alert addAction:cancelAction];
+    [self presentViewController:alert animated:YES completion:nil];
+    
+}
+
+//指定特定参会人上大屏幕
+- (void)lockScreenAction: (UIButton *)button {
+     [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(clickAction:) object:button];
+    if (self.shareModel.isSharing) {
+        return;
+    }
+    NSInteger i = button.tag - 500;
+    VideoViewModel *videoViewModel = self.farEndViewsArray[i];
+    
+    if ([videoViewModel.uuid isEqualToString:self.vcrtc.uuid]) {
+        [self cancelLockScreenAction:nil];
+        self.stickUUID = videoViewModel.uuid;
+        [self layoutFarEndView:self.vcrtc.layoutParticipants];
+        
+    } else {
+        self.stickUUID = videoViewModel.uuid;
+        [self.vcrtc stickParticipant:videoViewModel.uuid onStick:YES success:^(id  _Nonnull response) {
+        } failure:^(NSError * _Nonnull error) {
+            
+        }];
+    }
+}
+
+//取消
+- (void)cancelLockScreenAction: (UIButton *)button {
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(clickAction:) object:button];
+    if (!self.stickUUID.length || self.shareModel.isSharing) {
+        return;
+    }
+
+    if (![self.stickUUID isEqualToString:self.vcrtc.uuid]) {
+        [self.vcrtc stickParticipant:self.stickUUID onStick:NO success:^(id  _Nonnull response) {
+            self.stickUUID = @"";
+            
+        } failure:^(NSError * _Nonnull error) {
+            
+        }];
+    } else {
+        self.stickUUID = @"";
+        [self layoutFarEndView:self.vcrtc.layoutParticipants];
+    }
+}
+
 //退出会议
 - (IBAction)exitMeetingAction:(UIButton *)sender {
     
@@ -614,6 +749,7 @@
     self.bottomView.hidden = YES;
     [self setNeedsStatusBarAppearanceUpdate];//状态栏的显示隐藏
 }
+
 
 
 //麦克风关闭打开
@@ -729,10 +865,10 @@
         [self.vcrtc shareToStreamImageData:data open:YES change:myChange success:^(id  _Nonnull response) {
             
         } failure:^(NSError * _Nonnull error) {
-                        NSLog(@"分享失败：%@ -- ",error);
-                        if(self.shareBtn.selected == NO) return ;
-                        self.shareBtn.selected = NO ;
-                        self.shareModel.isSharing = NO ;
+            NSLog(@"分享失败：%@ -- ",error);
+            if(self.shareBtn.selected == NO) return ;
+            self.shareBtn.selected = NO ;
+            self.shareModel.isSharing = NO ;
         }];
         if (!myChange) {
             //更新shareModel的相关状态
@@ -790,7 +926,7 @@
         } else if (self.farEndViewsArray.count == 1) {
             model = [self.farEndViewsArray firstObject] ;
         } else if (self.farEndViewsArray.count > 1) {
-             model = self.farEndViewsArray[1];
+            model = self.farEndViewsArray[1];
         }
         //查看当前这个视图上是否有小视频 如果有只是更改小视频的VCVideoView 如果没有再新建 (防止重复创建改视图)
         BOOL isContainSmallView = NO;
@@ -822,9 +958,11 @@
 
 //屏幕点击
 - (IBAction)clickAction:(UIButton *)sender {
-    self.topView.hidden = !self.topView.hidden;
-    self.bottomView.hidden = !self.bottomView.hidden;
-    [self setNeedsStatusBarAppearanceUpdate];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        self.topView.hidden = !self.topView.hidden;
+        self.bottomView.hidden = !self.bottomView.hidden;
+        [self setNeedsStatusBarAppearanceUpdate];
+    });
 }
 
 
