@@ -22,4 +22,5 @@ FOUNDATION_EXPORT const unsigned char VCRTCVersionString[];
 #import "VCVideoView.h"
 #import "Participant.h"
 #import "VCMediaStat.h"
+#import "VCForScreenModule.h"
 

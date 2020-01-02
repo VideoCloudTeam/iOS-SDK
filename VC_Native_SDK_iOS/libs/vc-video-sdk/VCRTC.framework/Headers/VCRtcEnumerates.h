@@ -65,3 +65,32 @@ typedef NS_ENUM(NSInteger, VCServerRegister ) {
     VCServerRegisterFailure   // 当前服务器地址不可用
 } ;
 
+typedef NS_ENUM(NSInteger, VCForScreenFaildType ) {
+    VCForScreenFaildTypeNetwork,  // 网络失败
+    VCForScreenFaildTypeNotFound, // 匹配码不存在
+    VCForScreenFaildTypeOther // 造成连接失败的其他原因
+} ;
+
+typedef NS_ENUM(NSInteger,VCForScreenType ) {
+    VCForScreenTypeRecord,
+    VCForScreenTypePhoto
+};
+
+typedef NS_ENUM(NSInteger,VCForScreenStatus ) {
+    VCForScreenStatusWait,
+    VCForScreenStatusOpen,
+    VCForScreenStatusClose,
+    VCForScreenStatusError,
+    VCForScreenStatusSharePhoto,
+    VCForScreenStatusShareRecord
+};
+
+typedef NS_ENUM(NSInteger,VCForScreenDisconnectReason ) {
+    // 被投屏端强制断开
+    VCForScreenDisconnectReasonByRemote,
+    // 本端主动断开
+    VCForScreenDisconnectReasonByLocal,
+    // 共享源被其他端抢断
+    VCForScreenDisconnectReasonCast
+};
+

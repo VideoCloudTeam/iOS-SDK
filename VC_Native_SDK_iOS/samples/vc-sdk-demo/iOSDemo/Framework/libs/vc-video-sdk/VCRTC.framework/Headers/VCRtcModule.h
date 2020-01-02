@@ -306,7 +306,8 @@ typedef void(^failureBlock)(NSError * error);
 @property (nonatomic, copy) NSString *http_port;
 /** 点对点呼叫的名字 */
 @property (nonatomic, copy) NSString *conferenceName;
-
+/** 消费ID */
+@property (nonatomic, strong, readonly) NSString *serviceUUID ;
 
 /** 单例*/
 + (instancetype)sharedInstance;
@@ -776,7 +777,7 @@ typedef void(^failureBlock)(NSError * error);
 - (void)stickParticipant:(NSString *)participant
                  onStick:(BOOL )stick
                  success:(successBlock )success
-                 failure:(failureBlock )failure ;
+                 failure:(failureBlock )failure;
 
 /** 主动停止屏幕录制 */
 - (void)stopRecordScreen ;
@@ -784,6 +785,17 @@ typedef void(^failureBlock)(NSError * error);
 // 主动获取音视频质量参数
 - (void)getStatBlock:(nullable void (^)(NSArray<VCMediaStat *> *stats))completionHandler;
 
+/// 举手或者放下举手
+/// @param participantUuid 参会者UUID
+/// @param raiseHand YES 举手 NO发下举手
+- (void)raiseHand:(NSString *)participantUuid isRaiseHand: (BOOL)raiseHand success:(successBlock )success
+          failure:(failureBlock )failure;
+
+- (void)clearAllRaiseHandWithsuccess:(successBlock )success
+failure:(failureBlock )failure;
+
+// 获取会议的消费ID
+- (NSString *)getServiceUUID ;
 
 
 @end

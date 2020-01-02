@@ -56,6 +56,8 @@ NS_ASSUME_NONNULL_BEGIN
 /** 讲话者指示：0=不在讲话 100=正在讲话 */
 @property (nonatomic, assign) int vad;
 @property (nonatomic, strong) NSString *cStickUuid ;
+/** 0未举手 不为0举手 */
+@property (nonatomic, assign) double hand_time;
 
 
 - (instancetype)initWithData:(NSDictionary *)data;

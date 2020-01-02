@@ -238,6 +238,7 @@
 }
 
 - (void)VCRtc:(VCRtcModule *)module didLayoutParticipants:(NSArray *)participants {
+    NSLog(@" --- %@", participants) ;
     [self layoutFarEndView:participants];
 }
 
