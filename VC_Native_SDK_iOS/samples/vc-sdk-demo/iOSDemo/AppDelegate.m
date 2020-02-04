@@ -30,8 +30,22 @@
     [userDefault setObject:@"outmeeting" forKey:kScreenRecordMeetingState];
     //初始化屏幕录制状态
     [userDefault setObject:@"applaunch" forKey:kScreenRecordState];
+    [self setSVProgressHUDProperty];
 
     return YES;
+}
+
+- (void)setSVProgressHUDProperty {
+    [SVProgressHUD setDefaultAnimationType:SVProgressHUDAnimationTypeNative];
+    [SVProgressHUD setDefaultStyle:SVProgressHUDStyleCustom];
+    [SVProgressHUD setMinimumDismissTimeInterval:2.0f];
+    [SVProgressHUD setCornerRadius:10.0f];
+    [SVProgressHUD setBackgroundColor:[UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:0.7]];
+    [SVProgressHUD setSuccessImage:nil];
+    [SVProgressHUD setForegroundColor:[UIColor whiteColor]];
+    [SVProgressHUD setErrorImage:nil];
+    [SVProgressHUD setInfoImage:nil];
+    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeClear];
 }
 
 

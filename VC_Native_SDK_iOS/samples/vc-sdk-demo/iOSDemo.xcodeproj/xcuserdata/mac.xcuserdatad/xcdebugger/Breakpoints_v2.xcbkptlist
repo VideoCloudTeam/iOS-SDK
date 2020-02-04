@@ -106,5 +106,149 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1720B54F-9F82-413F-A77E-5FE4C5169417"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOSDemo/VC/ExampleVC.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "201"
+            endingLineNumber = "201"
+            landmarkName = "-VCRtc:didAddView:uuid:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A914FC1C-661A-4065-AEE1-71B3A745A459"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOSDemo/VC/ExampleVC.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "207"
+            endingLineNumber = "207"
+            landmarkName = "-VCRtc:didAddView:uuid:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1BC1C46C-EE59-49A8-98FF-7C21872687C8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOSDemo/VC/ExampleVC.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "210"
+            endingLineNumber = "210"
+            landmarkName = "-VCRtc:didAddView:uuid:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "535A900A-38A1-4DC0-AEBE-3DFD84C19015"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOSDemo/VC/ExampleVC.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "202"
+            endingLineNumber = "202"
+            landmarkName = "-VCRtc:didAddView:uuid:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CE62CC85-C6C6-4301-A08B-6ADD7AE61F8A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOSDemo/VC/ExampleVC.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "208"
+            endingLineNumber = "208"
+            landmarkName = "-VCRtc:didAddView:uuid:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A36A365F-0E01-4A06-8711-E601FD7C8B80"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOSDemo/&#x529f;&#x80fd;&#x9f50;&#x5168;&#x7248;&#x672c;/Model/ConferenceHelper.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "587"
+            endingLineNumber = "587"
+            landmarkName = "-conf_reloadBigViewClose:withOwner:withIndex:withSize:streamCount:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "60EEB22C-8C52-4826-8FEA-9CAF3AACCB8D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOSDemo/&#x529f;&#x80fd;&#x9f50;&#x5168;&#x7248;&#x672c;/Model/ConferenceHelper.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "566"
+            endingLineNumber = "566"
+            landmarkName = "-conf_reloadBigViewClose:withOwner:withIndex:withSize:streamCount:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "80D3C0E8-9473-4803-BE99-D18B97B2056F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOSDemo/&#x529f;&#x80fd;&#x9f50;&#x5168;&#x7248;&#x672c;/VC/ConferenceViewController.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1277"
+            endingLineNumber = "1277"
+            landmarkName = "-changeLayoutStream"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "05CA5262-C563-434A-86CD-3615182D59E5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOSDemo/&#x529f;&#x80fd;&#x9f50;&#x5168;&#x7248;&#x672c;/VC/ConferenceViewController.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1278"
+            endingLineNumber = "1278"
+            landmarkName = "-changeLayoutStream"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

@@ -16,12 +16,31 @@
 #import <VCRTC/VCRTC.h>
 #import <WebRTC/WebRTC.h>
 #import "TZImagePickerController.h"
+#import "YYCategories.h"
+#import "SVProgressHUD.h"
+#import "YYText.h"
+#import "UIView+Frame.h"
 #define SCREEN_WIDTH  [UIScreen mainScreen].bounds.size.width
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+
 #define IS_PhoneXAll (IS_IPHONE_X || IS_IPHONE_Xr || IS_IPHONE_Xs_Max)
+//判断是否是ipad
+#define isPad ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
+//判断iPhoneX，Xs（iPhoneX，iPhoneXs）
+#define IS_IPHONE_X ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) && !isPad : NO)
+//判断iPhoneXr
+#define IS_IPHONE_Xr ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(828, 1792), [[UIScreen mainScreen] currentMode].size) && !isPad : NO)
+//判断iPhoneXsMax
+#define IS_IPHONE_Xs_Max ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1242, 2688), [[UIScreen mainScreen] currentMode].size)&& !isPad : NO)
+
+
+
 
 #define kGroupId @"group.com.vcsdk-demo"
 #define kScreenRecordState @"screen_record_open_state"//屏幕录制状态 start 开始录制 stop 停止录制 applaunch app刚进入 ongoging 录制屏幕进行中
 #define kScreenRecordMeetingState @"screen_record_meeting_state"//会议状态 outmeeting没入会 inmeeting 会中
+#define kAudioInterriptionEndMeeting @"end_meeting_with_audio_interription"
+#define kNetworkTimeoutEndMeeting  @"end_meeting_network_timeout"
+
 
 #endif /* PrefixHeader_pch */
