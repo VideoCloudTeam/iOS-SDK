@@ -7,7 +7,6 @@
 
 #import "MediaDataHandle.h"
 #import "VCMediaStat.h"
-#import <VCMediaStat.h>
 #import "Participant.h"
 #import <sys/sysctl.h>
 #import <mach/mach.h>

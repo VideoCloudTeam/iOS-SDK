@@ -214,21 +214,7 @@ RTCHelperMediaDelegate> {
     self.muteBtn.selected = self.selectMute || self.audioMute;
     self.closeLocalVideoBtn.selected = self.videoMute;
     self.onlyAudioBtn.hidden = !self.vcrtc.isShiTong;
-    if (self.vcrtc.isShiTong) {
-        NSString *name = self.shareUrl[@"name"] ;
-        name = name.length <= 15 ? name : [NSString stringWithFormat:@"%@%@", [name substringToIndex:15],@"..."] ;
-        self.meetingRoomNumLab.text = [NSString stringWithFormat:@"%@(%@)",name,self.callName.length ? self.callName : self.channel]  ;
-    } else {
-        self.meetingRoomNumLab.text =  self.channel ;
-    }
-    //专属云预约的会议显示预约标题
-    
-    [self.confHelper conf_setShareInfo:self.shareUrl block:^(NSString * _Nonnull name) {
-        if (self.vcrtc.isShiTong) {
-            name = name.length <= 15 ? name : [NSString stringWithFormat:@"%@%@", [name substringToIndex:15],@"..."] ;
-            self.meetingRoomNumLab.text = [NSString stringWithFormat:@"%@(%@)",name,self.callName.length ? self.callName : self.channel];
-        }
-    }];
+    self.meetingRoomNumLab.text =  self.channel;
     
     //静音开启
     if (self.selectMute) {
