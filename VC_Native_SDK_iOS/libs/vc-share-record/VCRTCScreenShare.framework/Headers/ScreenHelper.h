@@ -1,6 +1,6 @@
 //
 //  ScreenHelper.h
-//  VCScreenShare
+//  ZJScreenShare
 //
 //  Created by starcwl on 12/3/18.
 //  Copyright © 2018 zijingcloud. All rights reserved.
