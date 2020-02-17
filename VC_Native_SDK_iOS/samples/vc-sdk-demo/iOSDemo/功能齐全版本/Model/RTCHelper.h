@@ -35,6 +35,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (void) RTCHelper:(RTCHelper *)helper didStopWhiteBoard:(NSString *)shareUrl withUuid:(NSString *)uuid;
 - (void)RTCHelper:(RTCHelper *)helper didReceivedSubtitlesMessage:(NSDictionary *)subtitlesmessage;
 - (void)RTCHelper:(RTCHelper *)helper didUpdateParticipant:(Participant *)participant;
+- (void)RTCHelper:(RTCHelper *)helper didAddParticipant:(Participant *)participant;
+- (void)RTCHelper:(RTCHelper *)helper didRemoveParticipant:(Participant *)participant;
+
 
 @end
 

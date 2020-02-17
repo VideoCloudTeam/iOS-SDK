@@ -34,7 +34,8 @@ typedef NS_ENUM(NSInteger, VCConnectType) {
     VCConnectTypeMeeting,//音视频会议
     VCConnectTypeUser,//点对点间呼叫
     VCConnectTypeOnlyManager,//仅管理会议
-    VCConnectTypeHideMe//隐身入会 (观看会议，并不参见会议)
+    VCConnectTypeHideMe,//隐身入会 (观看会议，并不参见会议)
+    VCConnectTypeContentShare // 内容共享入会
 };
 
 typedef NS_ENUM(NSUInteger, VCConferenceType) {

@@ -369,8 +369,8 @@ typedef void(^failureBlock)(NSError * error);
 - (void)connectChannel:(nonnull NSString *)channel
               password:(NSString *)password
                   name:(nonnull NSString *)name
-               success:(void (^)(id))success
-               failure:(void (^)(NSError *error))failure ;
+               success:(void (^)(id respose ) )success
+               failure:(void (^)(NSError* error))failure ;
 
 /**
  配置连接会议的类型

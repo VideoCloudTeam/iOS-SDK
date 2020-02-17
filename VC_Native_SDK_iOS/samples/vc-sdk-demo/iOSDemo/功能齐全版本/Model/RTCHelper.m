@@ -71,9 +71,9 @@
     }
 }
 
-- (void)VCRtc:(VCRtcModule *)module didAddParticipant:(Participant *)participant {
-    
-}
+//- (void)VCRtc:(VCRtcModule *)module didAddParticipant:(Participant *)participant {
+//
+//}
 
 - (void)VCRtc:(VCRtcModule *)module didUpdateParticipant:(Participant *)participant {
     if ([_media_delegate respondsToSelector:@selector(RTCHelper:didUpdateParticipant:)]) {
@@ -84,9 +84,9 @@
     }
 }
 
-- (void)VCRtc:(VCRtcModule *)module didRemoveParticipant:(Participant *)participant {
-   
-}
+//- (void)VCRtc:(VCRtcModule *)module didRemoveParticipant:(Participant *)participant {
+//
+//}
 
 - (void)VCRtc:(VCRtcModule *)module didReceivedMessage:(NSDictionary *)message {
     
@@ -217,5 +217,15 @@
         [_media_delegate RTCHelper:self didReceivedSubtitlesMessage:subtitlesmessage];
     }
 }
+- (void)VCRtc:(VCRtcModule *)module didAddParticipant:(Participant *)participant {
+    if ([_media_delegate respondsToSelector:@selector(RTCHelper:didAddParticipant:)]) {
+        [_media_delegate RTCHelper:self didAddParticipant:participant];
+    }
+}
 
+- (void)VCRtc:(VCRtcModule *)module didRemoveParticipant:(nonnull Participant *)participant {
+    if ([_media_delegate respondsToSelector:@selector(RTCHelper:didRemoveParticipant:)]) {
+        [_media_delegate RTCHelper:self didRemoveParticipant:participant];
+    }
+}
 @end

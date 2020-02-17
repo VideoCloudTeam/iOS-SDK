@@ -369,7 +369,13 @@ RTCHelperMediaDelegate> {
     [self.streamOnwers removeObject:selectOwnerInfo];
     [self didLayoutParticipants:self.vcrtc.layoutParticipants];
 }
+- (void)RTCHelper:(RTCHelper *)helper didAddParticipant:(Participant *)participant {
+    [SVProgressHUD showInfoWithStatus:[NSString stringWithFormat:@"%@进入会议",participant.overlayText]];
+}
 
+- (void)RTCHelper:(RTCHelper *)helper didRemoveParticipant:(Participant *)participant {
+    [SVProgressHUD showInfoWithStatus:[NSString stringWithFormat:@"%@离开会议",participant.overlayText]];
+}
 - (void) RTCHelper:(RTCHelper *)helper didLayoutParticipants:(NSArray *)participants {
     [self didLayoutParticipants:participants];
 }
