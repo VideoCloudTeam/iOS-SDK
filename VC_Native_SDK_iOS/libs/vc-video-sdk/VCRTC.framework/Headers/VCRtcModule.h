@@ -309,6 +309,9 @@ typedef void(^failureBlock)(NSError * error);
 /** 消费ID */
 @property (nonatomic, strong, readonly) NSString *serviceUUID ;
 
+@property (nonatomic, assign) NSInteger audioJitterBufferMaxPackets ;
+@property (nonatomic, assign) BOOL audioJitterBufferFastAccelerate ;
+
 /** 单例*/
 + (instancetype)sharedInstance;
 
