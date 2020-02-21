@@ -8,5 +8,5 @@ iOS-SDK 是iOS端Obective-C版本SDK。iOS-SDK 可以帮助您在十分钟内快
 
 # 版本
 * 优先用tag 中的版本，tag 中为稳定的发布版本。
-* 当前版本：v1.2.2
+* 当前版本：v1.2.3
 
