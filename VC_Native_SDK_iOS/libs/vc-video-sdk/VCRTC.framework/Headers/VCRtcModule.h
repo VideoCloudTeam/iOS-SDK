@@ -22,9 +22,6 @@ typedef void(^successBlock)(id response);
 typedef void(^failureBlock)(NSError * error);
 @protocol VCRtcModuleDelegate <NSObject>
 @optional
-
-- (void)VCRtc:(VCRtcModule *)module didAddChannelViewController:(UIViewController *)view NS_DEPRECATED_IOS(9_0,9_0,"该方法已废弃");
-
 /**
  接收远端视频
  
@@ -33,6 +30,7 @@ typedef void(^failureBlock)(NSError * error);
  @param uuid 当前视频所对应参会者的唯一标识
  */
 - (void)VCRtc:(VCRtcModule *)module didAddView:(VCVideoView *)view uuid:(NSString *)uuid;
+- (void)VCRtc:(VCRtcModule *)module image:(UIImage *)image;
 
 /**
   删除远端视频
@@ -309,28 +307,15 @@ typedef void(^failureBlock)(NSError * error);
 /** 消费ID */
 @property (nonatomic, strong, readonly) NSString *serviceUUID ;
 
-@property (nonatomic, assign) NSInteger audioJitterBufferMaxPackets ;
-@property (nonatomic, assign) BOOL audioJitterBufferFastAccelerate ;
+@property (nonatomic, assign) NSInteger audioJitterBufferMaxPackets;
+@property (nonatomic, assign) BOOL audioJitterBufferFastAccelerate;
+/** 举手功能是否开放  */
+@property (nonatomic, assign) BOOL isRaiseHandOpen;
 
 /** 单例*/
 + (instancetype)sharedInstance;
 
 /* ------ 参加当前会议，并对当前会议音视频管理 ------ */
-
-/**
- 登录用户名到平台(该方法已经废弃)
- 
- @param name 登录名
- @param password 登录密码
- @param phone 注册使用手机号
- @param nickname 登录名称
- */
-- (void)loginWithUsername:(NSString *)name
-                 password:(NSString *)password
-                    phone:(NSString *)phone
-                 nickname:(NSString *)nickname
-                  success:(successBlock )success
-                  failure:(failureBlock )failure NS_DEPRECATED_IOS(9_0,9_0,"该方法已废弃");
 
 /**
  登录用户名到平台

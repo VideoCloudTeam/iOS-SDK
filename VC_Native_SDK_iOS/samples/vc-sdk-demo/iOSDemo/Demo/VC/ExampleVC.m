@@ -108,7 +108,7 @@
     self.vcrtc.apiServer = self.serverString;
     //遵循 VCRtcModuleDelegate方法
     self.vcrtc.delegate = self;
-//    self.vcrtc.groupId = kGroupId;
+    self.vcrtc.groupId = kGroupId;
     //入会类型配置 点对点
     [self.vcrtc configConnectType:VCConnectTypeUser];
     //入会音视频质量配置

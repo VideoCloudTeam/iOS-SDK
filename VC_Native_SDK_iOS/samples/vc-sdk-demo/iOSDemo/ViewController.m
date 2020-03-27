@@ -87,6 +87,7 @@
         VCRtcModule *manager = [VCRtcModule sharedInstance];
         //配置服务器域名
         manager.apiServer = self.severField.text;
+        // 需要屏幕录制一定需要设置此参数。
         manager.groupId = kGroupId;
         [manager configConnectType:VCConnectTypeMeeting];
         //入会音视频质量配置
@@ -138,15 +139,5 @@
         [self.joinPwdField resignFirstResponder] ;
     }
 }
-
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
 
 @end
