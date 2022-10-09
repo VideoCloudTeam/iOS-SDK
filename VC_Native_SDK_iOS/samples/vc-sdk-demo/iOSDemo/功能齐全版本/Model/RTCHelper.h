@@ -47,7 +47,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)RTCHelperDidUpdateRecordAndlive;
 - (void)RTCHelperDidUpdateConferenceStatus;
 - (void)RTCHelper:(RTCHelper *)helper didDisconnectedWithReason:(NSError *)reason;
--  (void)RTCHelperDidUpdateParticipant: (Participant *)participant;
+- (void)RTCHelperDidUpdateParticipant: (Participant *)participant;
 
 
 
